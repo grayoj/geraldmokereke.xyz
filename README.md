@@ -8,6 +8,11 @@ A computer science, software engineering and sciency blog by Gerald Maduabuchi. 
 - Clone repo. Run `git clone --recurse-submodules https://github.com/grayoj/gnotes`.
 - Run `Hugo server hugo server -D`, to start server.
 
+## Deploy to GH Pages
+
+- Run `hugo`
+- Deploy Public folder to hosted repository.
+
 ## Credits
 
 The internet and [Hugo](https://gohugo.io).
