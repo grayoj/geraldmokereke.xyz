@@ -26,20 +26,6 @@ So help me God. Thank You.
 
 I'd like to specially thank myself, the internet for giving me the opportunity to showcase, the servers, ubuntu and Golang.
 
-### Frequently Asked Questions
-
-- Messi or Ronaldo? Ronaldo
-- Favourite Language. Err, I use JavaScript a lot. But C, Python.
-- What do you think of PHP? Powers the web and is hated on too much.
-- Favourite OS? Ubuntu, Windows and MacOS.
-- Which OS, exactly? In one word. UWM.
-- What?
-- First Letter of each.
-- What font do you use? Lexend.
-- Where's your dad? I don't know man.
-- What do you study? Computer Science, Electrical Engineering.
-- Favourite book? Can't decide
-
 ### End
 
 Thank you for staying around for this post.
