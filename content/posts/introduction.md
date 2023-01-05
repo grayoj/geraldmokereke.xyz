@@ -15,7 +15,6 @@ through several fields of science, technology, engineering, faith and poetry!
 
 - I _hereby_ pledge today, to avoid any such forms of piracy.
 - I pledge not to indulge in excess hate speech.
-- I pledge to show in every way I am geek or nerd worthy to read through sacred content.
 - I do not use Material UI to style my components from now henceforth.
 - I will not shit on the PHP programming language.
 - I shall always prefer React to the Angular framework.
