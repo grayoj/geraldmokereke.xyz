@@ -15,4 +15,4 @@ A computer science, software engineering and sciency blog by Gerald Maduabuchi. 
 
 ## Credits
 
-The internet and [Hugo](https://gohugo.io).
+The internet, ubuntu and [Hugo](https://gohugo.io).
