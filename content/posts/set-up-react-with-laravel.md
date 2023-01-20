@@ -11,7 +11,7 @@ tags: ['Laravel, React']
 
 Just like I was roaming Stackoverflow, you’ve probably been wondering how to set up React JS with the Laravel framework. React is arguably one of the most powerful libraries for building user-interfaces. Yes, it’s a library, not really a framework. It forms the view component of web applications. Laravel on the other hand, is a powerful open-source PHP framework used for building small to robust web applications. It implements the model-view-controller (MVC) software architecture. Both tools, seem to go pretty well with certain tools, without having to stress at all.
 
-![Image alt](https://miro.medium.com/max/720/1*5zbjAY6BL_u-OXF0_ZAPtw.webp)
+[!Image alt](https://miro.medium.com/max/720/1*5zbjAY6BL_u-OXF0_ZAPtw.webp)
 
 For example, React is used in the MERN stack. Which comprises of MongoDB as the database, Express server, React itself and Node JS (A runtime and server environment for JavaScript applications. Essentialy a browser engine bundled as a server that is based on Chromium's V8 Engine) Whereas, Laravel a PHP framework goes pretty well with the standard HTML code. Which is used with a powerful templating engine, known as Blade. So why use Laravel and React?
 
