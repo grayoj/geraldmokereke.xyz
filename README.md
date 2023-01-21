@@ -5,7 +5,7 @@ A computer science, software engineering and sciency blog by Gerald Maduabuchi. 
 ## Installation
 
 - Install Hugo.
-- Clone repo. Run `git clone --recurse-submodules https://github.com/grayoj/gnotes`.
+- Clone repo. Run `git clone --recurse-submodules https://github.com/grayoj/gnotes.git`.
 - Run `Hugo server hugo server -D`, to start server.
 
 ## Deploy to GH Pages
@@ -15,4 +15,4 @@ A computer science, software engineering and sciency blog by Gerald Maduabuchi. 
 
 ## Credits
 
-The internet and [Hugo](https://gohugo.io).
+The internet, ubuntu and [Hugo](https://gohugo.io).
