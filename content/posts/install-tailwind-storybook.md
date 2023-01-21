@@ -7,12 +7,12 @@ tags: ['Storybook, Tailwind', 'React']
 
 # Introduction.
 
-In this article, you will learn how to install storybook and configure it with tailwindcss, in a Next JS project. I have used these tools to build several sideprojects of mine and even professional projects.
+In this article, you will learn how to install storybook and configure it with tailwindcss, in a Next JS project. I have used these tools to build several side projects of mine and even professional projects.
 I hope you find it interesting.
 
 ### Why Tailwind and Storybook?
 
-It boils down to your preference. Storybook is a pretty nice tool that could be used alongside several CSS in options. From utility first frameworks such as tailwindcss, to Chakra UI or plain CSS styling.
+It boils down to your preference. Storybook is a pretty nice tool that could be used alongside several CSS in options. From utility first frameworks such as tailwindcss, to Chakra UI, CSS in JS (Styled Components) or plain styling in CSS.
 
 ### Requirements.
 
