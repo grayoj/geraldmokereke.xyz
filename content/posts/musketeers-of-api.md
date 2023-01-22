@@ -179,7 +179,7 @@ Diagram of an RPC Architecture:
 
 ![Image of RPC Architecture](https://cio-wiki.org/images/thumb/c/c3/RPC1.jpg/400px-RPC1.jpg)
 
-In the RPC Architecture, the client makes a procedure call to send data to the server. When the data arrives in a packet, then the server calls a dispatch routine, and then performs whatever service is requested, and sends a response back to the client. The procedure call then returns to the client. In simple terms this us quite straightforward. A communication protocol used to request data from another computer program within another machine in most cases.
+In the RPC Architecture, the client makes a procedure call to send data to the server. When the data arrives in a packet, then the server calls a dispatch routine, and then performs whatever service is requested, and sends a response back to the client. The procedure call then returns to the client. In simple terms this is quite straightforward. A communication protocol used to request data from another computer program within another machine in most cases.
 
 <u>Image Credits: Research Gate</u>.
 
