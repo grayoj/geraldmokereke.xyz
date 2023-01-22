@@ -173,7 +173,7 @@ SOAP is quite more primitive and not used extensively anymore since the advent o
 One of my favourites.
 The remote procedural call is an architecture for microservices and complex distributed systems that has been around for quite a long while — I mean, the 1980.
 
-The Initial XML-RPC system was quite cumbersome because ensuring that data types of XML payloads is difficult. Later on an RPC API started using a more concrete JSON-RPC specification which is considered a simpler and straightforward alternative to SOAP.
+The Initial XML-RPC system was quite cumbersome because ensuring the data types of XML payloads is difficult. Later on an RPC API started using a more concrete JSON-RPC specification which is considered a simpler and straightforward alternative to SOAP.
 
 Diagram of an RPC Architecture:
 
