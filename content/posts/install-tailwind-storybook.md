@@ -22,7 +22,7 @@ It boils down to your preference. Storybook is a pretty nice tool that could be 
 
 If you don’t have the above installed, kindly consult the [Your first node.js app.](https://grayoj.github.io/gnotes/)
 
-### Creating the Nextjs Application.
+### Creating the Next App.
 
 You would need to create the Next JS scaffolding for the application, otherwise project. Next JS is a framework that was created and is stil maintained by [Vercel](https://vercel.com). We would be using TypeScript, a superset of JavaScript, that makes your code safe essentially.
 
