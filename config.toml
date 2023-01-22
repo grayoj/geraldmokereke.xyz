@@ -120,11 +120,11 @@ languageName = "English"
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
-      avatarURL = "https://i.ibb.co/gw2crbn/1668163266439.jpg"
+      avatarURL = "https://i.ibb.co/z6DkLyf/93835183.jpg"
       # {{< version 0.2.7 changed >}} title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page (HTML format is supported)
-      subtitle = "Welcome to Gray's Notes. The nerd blog of Gerald Maduabuchi. Here, I write articles on computer science, artificial intelligence, software engineering, neuroscience and electrical engineering. I do try to curate some amazing tutorial content as well. Get some coffee and and have fun!"
+      subtitle = "I design and engineer. I write papers. I explore engineering. I tell computers what to do."
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links

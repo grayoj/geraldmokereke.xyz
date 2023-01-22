@@ -1,5 +1,6 @@
 ---
 title: 'Avoiding The Oops in Oop'
+title: 'Avoiding The Oops in Oop'
 date: 2023-01-05T09:13:23+01:00
 draft: false
 tags: ['OOP', 'Java', 'Best Practices']
@@ -7,7 +8,7 @@ tags: ['OOP', 'Java', 'Best Practices']
 
 # Introduction
 
-There is an awful lot that goes into writing good code that abides by proper Object-Oriented Programming principles. In this tutorial I will basically cover the importance and significance of writing quality code (well though I feel that is subjective) thereby avoiding "Oops in Oop" problems.
+There is an awful lot that goes into writing good code that abides by proper Object-Oriented Programming principles. In this tutorial I will basically cover the importance and significance of writing quality code (though I feel that quality code is subjective) thereby avoding "Oops in Oop."
 
 > Note: "Oops" is basically an exclamation made after a significant mistake or accident rather.
 
@@ -22,15 +23,13 @@ If you do not have a Java Installation, kindly proceed to the fourth section.
 
 ### Java: OOP's Bastard God Son
 
-What is Java? Java is a general purpose language developed by James Gosling basically. It fully supports the Object-Oriented Language and runs on the Java Virtual Machine, where it is compiled to Bytecode, that enables it appear as a universal language that can run anywhere! Yes that's right, fortunately unlike languages like Swift and C# that are platform otherwise operating system dependent - Java runs on all operating systems conveniently. Java is used heavily by huge firms, enterprise organisations, educational and government facilities. Java was the primary choice of development on the Android platform, before the advent of Kotlin's full adoption. Java is still used for building the server infrastructure for applications, games, mobile applications and so much more. Java's JVM serves as a machine to compile Java programs into bytecode. Not only Java, but the JVM is so powerful that it is used to compile other languages such as Scala and Kotlin which I refer to as Java's cousins.
+What is Java? Java is a general purpose language developed by James Gosling. It fully supports the Object-Oriented Paradigm and runs on the Java Virtual Machine, where it is compiled to Bytecode, that enables it appear as a universal language that can run anywhere! Yes that's right. Fortunately unlike languages like Swift and C# that are platform otherwise operating system dependent - Java runs on all operating systems conveniently. Java is used heavily by huge firms, enterprise organisations, educational and government facilities. Java was the primary choice of development on the Android platform, before the advent of Kotlin's full adoption. Java is stil used for building the server infrastructure for applications, games, mobile applications and so much more. Java's JVM serves as a platform to compile Java programs into bytecode. Not only Java, but the JVM is so powerful that it is used to compile other languages such as Scala and Kotlin which I refer toas Java's cousins.
 
 Diagram of the Java-Virtual-Machine:
 
 ![Java Virtual Machine Image](https://upload.wikimedia.org/wikipedia/commons/d/dd/JvmSpec7.png)
 
-For better visualisation, kindly see the diagram above so it's clear.
-
-Java comes bundled in a package known as the JDK. The JDK is the Java Development Kit, that comes with the right tools for developing in Java. Not the IDE, but components such as the language itself, the Java Virtual Machine and Java Runtime environment. There are about three Java Editions offered by Oracle. They include: Standard Edition, Enterprise Edition and Micro Edition.
+Java comes bundled in a package known as the JDK. The JDK is the Java Development Kit. It comes with the right tools for developing in Java. Not the IDE, but components such as the language itself, the Java Virtual Machine and Java Runtime environment. There are about three Java Editions offered by Oracle. They include: The Standard Edition, Enterprise Edition and Micro Edition.
 
 But in this case, we would be using the Java Standard Edition.
 
@@ -106,3 +105,38 @@ Polymorphism is how a program can execute an action in different ways. Polymorph
 This is a process used to hide the overall complexity from users and present information that is relevant. In Java you can hide the details of implementation using interfaces or abstract classes. Abstraction also helps present the important piece of functionality.
 
 ### Putting in Practice
+
+Let's write some code to implement the above principles of Object Oriented Programming.
+
+**1. Encapsulation/Data Hiding**
+
+You may have seen this example before. To find the area of a rectangle.
+
+```java
+// Create parent class to accept fields.
+class Area {
+  int breadth;
+  int length;
+
+  // Initialize Values
+  Area(int length, int breadth) {
+      this.length = length;
+      this.breadth = breadth;
+    }
+
+  // Function to calculate the Area
+  public void CalcArea() {
+      int area = length * breadth;
+      system.out.println("Area: " + area);
+    }
+}
+class Main {
+  public static void man(string[] args) {
+    Area rectangle = new Area(2. 16);
+    rectangle.calcArea():
+  }
+}
+
+```
+
+This example above is to calculate the area of a rectangle. So included the two fields otherwise variables inside a single class which is accessible from other classes.
