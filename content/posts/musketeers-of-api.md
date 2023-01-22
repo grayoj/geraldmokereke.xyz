@@ -1,17 +1,17 @@
 ---
-title: 'Musketeers of Api'
+title: 'Microservices, RPCs, SOAP, REST & GraphQL'
 date: 2023-01-22T11:27:55+01:00
 draft: false
 tags: ['API, Microservices, RPC, REST, SOAP']
 ---
 
-# The Musketeers of API.
+# Introduction
 
-This article will cover the topic of application programming interfaces, which is an essential unit that makes up the micro-service architecture.
+This article will cover the topic of application programming interfaces, which is an essential unit that makes up the microservice architecture.
 
 ### The Microservice Architecture.
 
-The micro service architecture is a type of application architecture where the application is broken into several units, communicating effectively with each other over a network protocol. In contrast to [monolith applications](https://g.co/kgs/apoGDN), which contains the entire logic, client side and server side units in one package that is deployed on a server. On the other hand, the Micro service architecture has its units loosely coupled together, and in most cases distributed across multiple system servers. This is why in many cases, the micro service architecture is referred to as a type of [_distributed system_](https://g.co/kgs/WHxZ7E).
+The micro service architecture is a type of application architecture where the application is broken into several units, communicating effectively with each other over a network protocol. In contrast to [monolith applications](https://g.co/kgs/apoGDN), which contains the entire logic, client side and server side units in one package that is deployed on a server. On the other hand, the Microservice architecture has its units loosely coupled together, and in most cases distributed across multiple system servers. This is why in many cases, the micro service architecture is referred to as a type of [_distributed system_](https://g.co/kgs/WHxZ7E).
 
 A microservice architecture:
 
@@ -19,7 +19,7 @@ A microservice architecture:
 
 <u>Image Credits: Future Fundamentals</u>
 
-A micro service is not a layer for a monolith application, and has many definitions based on its implementation. Microservices can be characterised by the following factors, as there is no general consensus within the industry that explicitly describes micro services in context. I am merely just trying to make this as intuitive as possible.
+A micro service is not a layer for a monolith application, and has many definitions based on its implementation. Microservices can be characterised by the following factors, as there is no general consensus within the industry that explicitly describes microservices in context. I am merely just trying to make this as intuitive as possible.
 
 1. The services are communicated over an internet protocol, particularly HTTP.
 2. The services could be implemented in several technology stacks and languages.
