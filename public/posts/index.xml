@@ -14,6 +14,16 @@
 Why Tailwind and Storybook? It boils down to your preference. Storybook is a pretty nice tool that could be used alongside several CSS in options. From utility first frameworks such as tailwindcss, to Chakra UI or plain CSS styling.]]></description>
 </item>
 <item>
+    <title>Avoiding The Oops in Oop</title>
+    <link>http://graysnotes.com/posts/oops-in-oop/</link>
+    <pubDate>Thu, 05 Jan 2023 09:13:23 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/posts/oops-in-oop/</guid>
+    <description><![CDATA[Introduction There is an awful lot that goes into writing good code that abides by proper Object-Oriented Programming principles. In this tutorial I will basically cover the importance and significance of writing quality code (well though I feel that is subjective) thereby avoiding &ldquo;Oops in Oop&rdquo; problems.
+Note: &ldquo;Oops&rdquo; is basically an exclamation made after a significant mistake or accident rather.
+Getting Started Before being able to follow this tutorial and get the best out of it, you have to meet up with the following perquisites.]]></description>
+</item>
+<item>
     <title>Set Up React With Laravel</title>
     <link>http://graysnotes.com/posts/set-up-react-with-laravel/</link>
     <pubDate>Wed, 04 Jan 2023 09:09:15 &#43;0100</pubDate>
