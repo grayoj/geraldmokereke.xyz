@@ -10,8 +10,8 @@ A computer science, software engineering and sciency blog by Gerald Maduabuchi. 
 
 ## Deploy to GH Pages
 
-- Run `hugo`
-- Deploy Public folder to hosted repository.
+- Run `git worktree add -B gh-pages public origin/gh-pages`
+- Run `chmod +x ./run.sh && ./run.sh.`
 
 ## Credits
 
