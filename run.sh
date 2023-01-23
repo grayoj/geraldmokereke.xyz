@@ -5,5 +5,5 @@ hugo
 cd public
 git add --all
 git commit -m "Published $(date)"
-git push origin github-pages
+git push origin gh-pages
 cd ..
