@@ -1,17 +1,23 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>API, Microservices, RPC, REST, SOAP - Tag - Gray&#39;s Notes</title>
-        <link>http://graysnotes.com/tags/api-microservices-rpc-rest-soap/</link>
-        <description>API, Microservices, RPC, REST, SOAP - Tag - Gray&#39;s Notes</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</managingEditor>
-            <webMaster>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</webMaster><lastBuildDate>Sun, 22 Jan 2023 11:27:55 &#43;0100</lastBuildDate><atom:link href="http://graysnotes.com/tags/api-microservices-rpc-rest-soap/" rel="self" type="application/rss+xml" /><item>
-    <title>Microservices, RPCs, SOAP, REST &amp; GraphQL</title>
-    <link>http://graysnotes.com/posts/musketeers-of-api/</link>
-    <pubDate>Sun, 22 Jan 2023 11:27:55 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/posts/musketeers-of-api/</guid>
-    <description><![CDATA[Introduction This article will cover the topic of application programming interfaces, which is an essential unit that makes up the microservice architecture.
-The Microservice Architecture. The micro service architecture is a type of application architecture where the application is broken into several units, communicating effectively with each other over a network protocol. In contrast to monolith applications, which contains the entire logic, client side and server side units in one package that is deployed on a server.]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API, Microservices, RPC, REST, SOAP on Gray&#39;s Notes</title>
+    <link>http://graysnotes.com/tags/api-microservices-rpc-rest-soap/</link>
+    <description>Recent content in API, Microservices, RPC, REST, SOAP on Gray&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</managingEditor>
+    <webMaster>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</webMaster>
+    <lastBuildDate>Sun, 22 Jan 2023 11:27:55 +0100</lastBuildDate><atom:link href="http://graysnotes.com/tags/api-microservices-rpc-rest-soap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microservices, RPCs, SOAP, REST &amp; GraphQL</title>
+      <link>http://graysnotes.com/posts/musketeers-of-api/</link>
+      <pubDate>Sun, 22 Jan 2023 11:27:55 +0100</pubDate>
+      <author>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</author>
+      <guid>http://graysnotes.com/posts/musketeers-of-api/</guid>
+      <description>Introduction This article will cover the topic of application programming interfaces, which is an essential unit that makes up the microservice architecture.
+The Microservice Architecture. The micro service architecture is a type of application architecture where the application is broken into several units, communicating effectively with each other over a network protocol. In contrast to monolith applications, which contains the entire logic, client side and server side units in one package that is deployed on a server.</description>
+    </item>
+    
+  </channel>
 </rss>

@@ -1,16 +1,22 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Git, Commits, Version Control - Tag - Gray&#39;s Notes</title>
-        <link>http://graysnotes.com/tags/git-commits-version-control/</link>
-        <description>Git, Commits, Version Control - Tag - Gray&#39;s Notes</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</managingEditor>
-            <webMaster>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</webMaster><lastBuildDate>Sun, 22 Jan 2023 16:05:12 &#43;0100</lastBuildDate><atom:link href="http://graysnotes.com/tags/git-commits-version-control/" rel="self" type="application/rss+xml" /><item>
-    <title>Writing better Git Commits</title>
-    <link>http://graysnotes.com/posts/commiting-in-git/</link>
-    <pubDate>Sun, 22 Jan 2023 16:05:12 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/posts/commiting-in-git/</guid>
-    <description><![CDATA[Introduction. In this article you would learn how to properly structure and craft decent, intuitive and readable commit messages that summarise the context of the code you published to either a remote or local branch of a repository. This would be helpful if you work on collaborative projects, and would also save you the mental stress of trying to figure out a commit. I was once guilty of creating incredibly confusing and inappropriate commit messages, that did not capture the context of my code.]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git, Commits, Version Control on Gray&#39;s Notes</title>
+    <link>http://graysnotes.com/tags/git-commits-version-control/</link>
+    <description>Recent content in Git, Commits, Version Control on Gray&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</managingEditor>
+    <webMaster>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</webMaster>
+    <lastBuildDate>Sun, 22 Jan 2023 16:05:12 +0100</lastBuildDate><atom:link href="http://graysnotes.com/tags/git-commits-version-control/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Writing better Git Commits</title>
+      <link>http://graysnotes.com/posts/commiting-in-git/</link>
+      <pubDate>Sun, 22 Jan 2023 16:05:12 +0100</pubDate>
+      <author>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</author>
+      <guid>http://graysnotes.com/posts/commiting-in-git/</guid>
+      <description>Introduction. In this article you would learn how to properly structure and craft decent, intuitive and readable commit messages that summarise the context of the code you published to either a remote or local branch of a repository. This would be helpful if you work on collaborative projects, and would also save you the mental stress of trying to figure out a commit. I was once guilty of creating incredibly confusing and inappropriate commit messages, that did not capture the context of my code.</description>
+    </item>
+    
+  </channel>
 </rss>
