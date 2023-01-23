@@ -1,5 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
-echo "Clone and Serve"
-git clone --recurse-submodules https://github.com/grayoj/gnotes.git
-Hugo server hugo server -D
+rm -rf public/*
+hugo
+cd public
+git add --all
+git commit -m "Published $(date)"
+git push origin gh-pages
+cd ..
