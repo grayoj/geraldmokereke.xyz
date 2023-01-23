@@ -1,6 +1,5 @@
 ---
 title: 'Avoiding The Oops in Oop'
-title: 'Avoiding The Oops in Oop'
 date: 2023-01-05T09:13:23+01:00
 draft: false
 tags: ['OOP', 'Java', 'Best Practices']
