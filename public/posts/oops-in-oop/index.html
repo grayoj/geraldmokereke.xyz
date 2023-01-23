@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Avoiding The Oops in Oop - Gray&#39;s Notes</title><meta name="Description" content="The official programming blog of Gerald Maduabuchi"><meta property="og:title" content="Avoiding The Oops in Oop" />
+<meta property="og:description" content="Introduction There is an awful lot that goes into writing good code that abides by proper Object-Oriented Programming principles. In this tutorial I will basically cover the importance and significance of writing quality code (though I feel that quality code is subjective) thereby avoding &ldquo;Oops in Oop.&rdquo;
+Note: &ldquo;Oops&rdquo; is basically an exclamation made after a significant mistake or accident rather.
+Getting Started Before being able to follow this tutorial and get the best out of it, you have to meet up with the following perquisites." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://graysnotes.com/posts/oops-in-oop/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-05T09:13:23+01:00" />
+<meta property="article:modified_time" content="2023-01-05T09:13:23+01:00" /><meta property="og:site_name" content="Gray&#39;s Notes" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Avoiding The Oops in Oop"/>
+<meta name="twitter:description" content="Introduction There is an awful lot that goes into writing good code that abides by proper Object-Oriented Programming principles. In this tutorial I will basically cover the importance and significance of writing quality code (though I feel that quality code is subjective) thereby avoding &ldquo;Oops in Oop.&rdquo;
+Note: &ldquo;Oops&rdquo; is basically an exclamation made after a significant mistake or accident rather.
+Getting Started Before being able to follow this tutorial and get the best out of it, you have to meet up with the following perquisites."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://graysnotes.com/posts/oops-in-oop/" /><link rel="prev" href="http://graysnotes.com/posts/set-up-react-with-laravel/" /><link rel="next" href="http://graysnotes.com/posts/install-tailwind-storybook/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Avoiding The Oops in Oop",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/graysnotes.com\/posts\/oops-in-oop\/"
+        },"image": ["https:\/\/i.ibb.co\/zhwH2Tc\/7e0cd014097697-5627d5f7bac0c.png"],"genre": "posts","keywords": "OOP, Java, Best Practices","wordcount":  1029 ,
+        "url": "http:\/\/graysnotes.com\/posts\/oops-in-oop\/","datePublished": "2023-01-05T09:13:23+01:00","dateModified": "2023-01-05T09:13:23+01:00","publisher": {
+            "@type": "Organization",
+            "name": "Grays Notes","logo": "https:\/\/i.ibb.co\/zhwH2Tc\/7e0cd014097697-5627d5f7bac0c.png"},"author": {
+                "@type": "Person",
+                "name": "Gerald Maduabuchi"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Gray&#39;s Notes"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        data-srcset="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 1.5x, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 2x"
+        data-sizes="auto"
+        alt="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        title="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Gray&#39;s Notes"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        data-srcset="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 1.5x, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 2x"
+        data-sizes="auto"
+        alt="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        title="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Avoiding The Oops in Oop</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Gerald Maduabuchi</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-05">2023-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1029 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#java-oops-bastard-god-son">Java: OOP&rsquo;s Bastard God Son</a></li>
+        <li><a href="#installing-java">Installing Java</a></li>
+        <li><a href="#setting-up-your-environment">Setting up your Environment</a></li>
+        <li><a href="#what-exactly-is-oop">What Exactly Is OOP?</a></li>
+        <li><a href="#principles-of-oop">Principles of OOP</a></li>
+        <li><a href="#putting-in-practice">Putting in Practice</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="introduction">Introduction</h1>
+<p>There is an awful lot that goes into writing good code that abides by proper Object-Oriented Programming principles. In this tutorial I will basically cover the importance and significance of writing quality code (though I feel that quality code is subjective) thereby avoding &ldquo;Oops in Oop.&rdquo;</p>
+<blockquote>
+<p>Note: &ldquo;Oops&rdquo; is basically an exclamation made after a significant mistake or accident rather.</p>
+</blockquote>
+<h3 id="getting-started">Getting Started</h3>
+<p>Before being able to follow this tutorial and get the best out of it, you have to meet up with the following perquisites.</p>
+<ol>
+<li>Java (Java Development Kit)</li>
+<li>Functioning IDE, Intelli J or Vscode works fine. You can use Netbeans.</li>
+</ol>
+<p>If you do not have a Java Installation, kindly proceed to the fourth section.</p>
+<h3 id="java-oops-bastard-god-son">Java: OOP&rsquo;s Bastard God Son</h3>
+<p>What is Java? Java is a general purpose language developed by James Gosling. It fully supports the Object-Oriented Paradigm and runs on the Java Virtual Machine, where it is compiled to Bytecode, that enables it appear as a universal language that can run anywhere! Yes that&rsquo;s right. Fortunately unlike languages like Swift and C# that are platform otherwise operating system dependent - Java runs on all operating systems conveniently. Java is used heavily by huge firms, enterprise organisations, educational and government facilities. Java was the primary choice of development on the Android platform, before the advent of Kotlin&rsquo;s full adoption. Java is stil used for building the server infrastructure for applications, games, mobile applications and so much more. Java&rsquo;s JVM serves as a platform to compile Java programs into bytecode. Not only Java, but the JVM is so powerful that it is used to compile other languages such as Scala and Kotlin which I refer toas Java&rsquo;s cousins.</p>
+<p>Diagram of the Java-Virtual-Machine:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload.wikimedia.org/wikipedia/commons/d/dd/JvmSpec7.png"
+        data-srcset="https://upload.wikimedia.org/wikipedia/commons/d/dd/JvmSpec7.png, https://upload.wikimedia.org/wikipedia/commons/d/dd/JvmSpec7.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/d/dd/JvmSpec7.png 2x"
+        data-sizes="auto"
+        alt="https://upload.wikimedia.org/wikipedia/commons/d/dd/JvmSpec7.png"
+        title="Java Virtual Machine Image" /></p>
+<p>Java comes bundled in a package known as the JDK. The JDK is the Java Development Kit. It comes with the right tools for developing in Java. Not the IDE, but components such as the language itself, the Java Virtual Machine and Java Runtime environment. There are about three Java Editions offered by Oracle. They include: The Standard Edition, Enterprise Edition and Micro Edition.</p>
+<p>But in this case, we would be using the Java Standard Edition.</p>
+<h3 id="installing-java">Installing Java</h3>
+<p>To install Java is dependent on the operating system you are on. For Windows, it&rsquo;s as simple as getting the installer up and running on your machine, and you can download here: <a href="https://www.oracle.com/java/technologies/downloads/#jdk19-windows" target="_blank" rel="noopener noreffer ">JDK for Windows</a>
+Let&rsquo;s use Java 19. Or of you are a terminal dude like myself use Choclatey.</p>
+<p>If you&rsquo;re on a MacOS, you can install by opening up your terminal and running:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install openjdk@19
+</span></span></code></pre></div><p>That would get you the Open JDK installed using the Homebrew Package Manager. Homebrew is a package management system for Linux and Unix machines that you can use for free. I&rsquo;m on Linux now, but I prefer to use the <code>apt-install</code> package.
+For debian Linux, which I am on, run on bash&quot;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install openjdk-19-jdk-headless
+</span></span></code></pre></div><blockquote>
+<p>On windows, you may need to add <code>JAVA_HOME</code> to your environment variables to get it up and running.</p>
+</blockquote>
+<p>To Verify your installation, run on Linux and Mac:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">javac -version
+</span></span></code></pre></div><p>For Windows, run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">java --version
+</span></span></code></pre></div><p>If it prints out your current version for you, then my friend you are good, ready set and up to go.</p>
+<h3 id="setting-up-your-environment">Setting up your Environment</h3>
+<p>I usually advice people to use an enabling Integrated Development Environment for ease of development in opposition to the traditional editors such as Emacs, Vim, or even Sublime Text. Please use Visual Studio Code, Netbeans or Intelli J (which by many is the best Java Development IDE available in the market)</p>
+<h3 id="what-exactly-is-oop">What Exactly Is OOP?</h3>
+<p>OOP is a programming paradigm, that is responsible for basically writing scalable, functional and organised code for software systems. OOP, known as Object-Oriented-Programming is a model of programming and software design that is conceptualised on the implementation of data types and objects as opposed to functions. For more on Object Oriented Programming, check <a href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank" rel="noopener noreffer ">here</a></p>
+<p>I won&rsquo;t really dive deep into OOP, but you get the context here.</p>
+<h3 id="principles-of-oop">Principles of OOP</h3>
+<p>OOP has several principles that govern its implementation in programming. They include:</p>
+<ol>
+<li>Encapsulation</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+<li>Abstraction</li>
+</ol>
+<p>Those are the four basic principles we will cover. We will leave out composition and aggregation for another day.</p>
+<p><strong>1. Encapsulation</strong></p>
+<p>Not to confuse with abstraction, is a means of data security to help protect your data stored in a class from unauthorised access. Anytime you come across methods such as Public, Private and Protected, these are methods of encapsulation to save guard your code.</p>
+<p><strong>2. Inheritance</strong></p>
+<p>This is one of my favourite concepts of OOP. Inheritance is a means of referencing classes in code, i.e Parent to Child, otherwise Superclasses (Parent Classes) to Base Classes. By employing the <code>extend</code> keyword each time, you tell Java to implement inheritance. Inheritance pretty much solves the <strong>DRY Problem</strong> which is &ldquo;Do not Repeat Yourself.&rdquo;</p>
+<p><strong>3. Polymorphism</strong></p>
+<p>Polymorphism is how a program can execute an action in different ways. Polymorphism has two forms in the Java Programming language, which includes method overloading (when various functions with the same name are within a class) and method overriding (when a child class overrides the parent method)</p>
+<p><strong>4. Abstraction</strong></p>
+<p>This is a process used to hide the overall complexity from users and present information that is relevant. In Java you can hide the details of implementation using interfaces or abstract classes. Abstraction also helps present the important piece of functionality.</p>
+<h3 id="putting-in-practice">Putting in Practice</h3>
+<p>Let&rsquo;s write some code to implement the above principles of Object Oriented Programming.</p>
+<p><strong>1. Encapsulation/Data Hiding</strong></p>
+<p>You may have seen this example before. To find the area of a rectangle.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Create parent class to accept fields.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">class</span> <span class="nc">Area</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">breadth</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">length</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Initialize Values
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">Area</span><span class="o">(</span><span class="kt">int</span> <span class="n">length</span><span class="o">,</span> <span class="kt">int</span> <span class="n">breadth</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">length</span> <span class="o">=</span> <span class="n">length</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">breadth</span> <span class="o">=</span> <span class="n">breadth</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Function to calculate the Area
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">CalcArea</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kt">int</span> <span class="n">area</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">breadth</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">system</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Area: &#34;</span> <span class="o">+</span> <span class="n">area</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">man</span><span class="o">(</span><span class="n">string</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Area</span> <span class="n">rectangle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Area</span><span class="o">(</span><span class="mf">2.</span> <span class="mi">16</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rectangle</span><span class="o">.</span><span class="na">calcArea</span><span class="o">():</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>This example above is to calculate the area of a rectangle. So included the two fields otherwise variables inside a single class which is accessible from other classes.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-05</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://graysnotes.com/posts/oops-in-oop/" data-title="Avoiding The Oops in Oop" data-via="map[id:@geraldabuchi prefix:https://twitter/ title:Twitter weight:0]" data-hashtags="OOP,Java,Best Practices"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://graysnotes.com/posts/oops-in-oop/" data-hashtag="OOP"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://graysnotes.com/posts/oops-in-oop/" data-title="Avoiding The Oops in Oop"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://graysnotes.com/posts/oops-in-oop/" data-title="Avoiding The Oops in Oop"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://graysnotes.com/posts/oops-in-oop/" data-title="Avoiding The Oops in Oop"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/oop/">OOP</a>,&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/best-practices/">Best Practices</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/set-up-react-with-laravel/" class="prev" rel="prev" title="Set Up React With Laravel"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Set Up React With Laravel</a>
+            <a href="/posts/install-tailwind-storybook/" class="next" rel="next" title="Set up Tailwind and Storybook with Next">Set up Tailwind and Storybook with Next<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Gerald Maduabuchi</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
