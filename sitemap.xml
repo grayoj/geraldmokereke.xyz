@@ -2,67 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://graysnotes.com/tags/git-commits-version-control/</loc>
-    <lastmod>2023-01-22T16:05:12+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/</loc>
-    <lastmod>2023-01-22T16:05:12+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/posts/</loc>
-    <lastmod>2023-01-22T16:05:12+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/tags/</loc>
-    <lastmod>2023-01-22T16:05:12+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/posts/commiting-in-git/</loc>
-    <lastmod>2023-01-22T16:05:12+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/tags/api-microservices-rpc-rest-soap/</loc>
-    <lastmod>2023-01-22T11:27:55+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/posts/musketeers-of-api/</loc>
-    <lastmod>2023-01-22T11:27:55+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/tags/react/</loc>
-    <lastmod>2023-01-20T16:56:38+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/posts/install-tailwind-storybook/</loc>
-    <lastmod>2023-01-20T16:56:38+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/tags/storybook-tailwind/</loc>
-    <lastmod>2023-01-20T16:56:38+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/posts/oops-in-oop/</loc>
-    <lastmod>2023-01-05T09:13:23+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/tags/best-practices/</loc>
-    <lastmod>2023-01-05T09:13:23+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/tags/java/</loc>
-    <lastmod>2023-01-05T09:13:23+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/tags/oop/</loc>
-    <lastmod>2023-01-05T09:13:23+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/tags/laravel-react/</loc>
-    <lastmod>2023-01-04T09:09:15+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/posts/set-up-react-with-laravel/</loc>
-    <lastmod>2023-01-04T09:09:15+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/tags/algorithms-c/</loc>
-    <lastmod>2022-08-17T16:59:56+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/posts/fibonacci-in-c/</loc>
-    <lastmod>2022-08-17T16:59:56+01:00</lastmod>
-  </url><url>
-    <loc>http://graysnotes.com/posts/building-image-classifier/</loc>
-    <lastmod>2022-06-16T14:05:25+01:00</lastmod>
-  </url><url>
     <loc>http://graysnotes.com/categories/</loc>
   </url><url>
-    <loc>http://graysnotes.com/posts/hello_world.md/</loc>
+    <loc>http://graysnotes.com/</loc>
   </url><url>
-    <loc>http://graysnotes.com/tags/introduction-faq/</loc>
+    <loc>http://graysnotes.com/tags/</loc>
   </url>
 </urlset>
