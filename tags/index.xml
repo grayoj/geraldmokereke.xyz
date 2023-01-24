@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Gray&#39;s Notes</title>
+        <link>http://graysnotes.com/tags/</link>
+        <description>Tags - Tag - Gray&#39;s Notes</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</managingEditor>
+            <webMaster>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</webMaster><lastBuildDate>Sun, 22 Jan 2023 16:05:12 &#43;0100</lastBuildDate><atom:link href="http://graysnotes.com/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Git, Commits, Version Control</title>
+    <link>http://graysnotes.com/tags/git-commits-version-control/</link>
+    <pubDate>Sun, 22 Jan 2023 16:05:12 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/tags/git-commits-version-control/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>API, Microservices, RPC, REST, SOAP</title>
+    <link>http://graysnotes.com/tags/api-microservices-rpc-rest-soap/</link>
+    <pubDate>Sun, 22 Jan 2023 11:27:55 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/tags/api-microservices-rpc-rest-soap/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>React</title>
+    <link>http://graysnotes.com/tags/react/</link>
+    <pubDate>Fri, 20 Jan 2023 16:56:38 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/tags/react/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Storybook, Tailwind</title>
+    <link>http://graysnotes.com/tags/storybook-tailwind/</link>
+    <pubDate>Fri, 20 Jan 2023 16:56:38 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/tags/storybook-tailwind/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Best Practices</title>
+    <link>http://graysnotes.com/tags/best-practices/</link>
+    <pubDate>Thu, 05 Jan 2023 09:13:23 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/tags/best-practices/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Java</title>
+    <link>http://graysnotes.com/tags/java/</link>
+    <pubDate>Thu, 05 Jan 2023 09:13:23 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/tags/java/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>OOP</title>
+    <link>http://graysnotes.com/tags/oop/</link>
+    <pubDate>Thu, 05 Jan 2023 09:13:23 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/tags/oop/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Laravel, React</title>
+    <link>http://graysnotes.com/tags/laravel-react/</link>
+    <pubDate>Wed, 04 Jan 2023 09:09:15 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/tags/laravel-react/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Algorithms, C</title>
+    <link>http://graysnotes.com/tags/algorithms-c/</link>
+    <pubDate>Wed, 17 Aug 2022 16:59:56 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/tags/algorithms-c/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Artificial Intelligence, 2019, Article</title>
+    <link>http://graysnotes.com/tags/artificial-intelligence-2019-article/</link>
+    <pubDate>Sun, 24 Nov 2019 21:40:50 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/tags/artificial-intelligence-2019-article/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

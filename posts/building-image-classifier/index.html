@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Building An Image Classifier - Gray&#39;s Notes</title><meta name="Description" content="The official programming blog of Gerald Maduabuchi"><meta property="og:title" content="Building An Image Classifier" />
+<meta property="og:description" content="Introduction. In this article, I will guide you through the processes I went through to create an image classifier using the Flask framework, the Keras library and Google&rsquo;s popular machine learning library, Tensorflow. It was quite an interesting project that managed to gain over nineteen stars on Github, as at the time of writing this article. I was really pleased with the project, thus I humbly decided to share the entire workflow." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://graysnotes.com/posts/building-image-classifier/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-16T14:05:25+01:00" />
+<meta property="article:modified_time" content="2022-06-16T14:05:25+01:00" /><meta property="og:site_name" content="Gray&#39;s Notes" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Building An Image Classifier"/>
+<meta name="twitter:description" content="Introduction. In this article, I will guide you through the processes I went through to create an image classifier using the Flask framework, the Keras library and Google&rsquo;s popular machine learning library, Tensorflow. It was quite an interesting project that managed to gain over nineteen stars on Github, as at the time of writing this article. I was really pleased with the project, thus I humbly decided to share the entire workflow."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://graysnotes.com/posts/building-image-classifier/" /><link rel="prev" href="http://graysnotes.com/posts/introduction-to-ai-2019/" /><link rel="next" href="http://graysnotes.com/posts/fibonacci-in-c/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Building An Image Classifier",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/graysnotes.com\/posts\/building-image-classifier\/"
+        },"image": ["https:\/\/i.ibb.co\/zhwH2Tc\/7e0cd014097697-5627d5f7bac0c.png"],"genre": "posts","wordcount":  2633 ,
+        "url": "http:\/\/graysnotes.com\/posts\/building-image-classifier\/","datePublished": "2022-06-16T14:05:25+01:00","dateModified": "2022-06-16T14:05:25+01:00","publisher": {
+            "@type": "Organization",
+            "name": "Grays Notes","logo": "https:\/\/i.ibb.co\/zhwH2Tc\/7e0cd014097697-5627d5f7bac0c.png"},"author": {
+                "@type": "Person",
+                "name": "Gerald Maduabuchi"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Gray&#39;s Notes"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        data-srcset="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 1.5x, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 2x"
+        data-sizes="auto"
+        alt="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        title="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Gray&#39;s Notes"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        data-srcset="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 1.5x, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 2x"
+        data-sizes="auto"
+        alt="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        title="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Building An Image Classifier</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Gerald Maduabuchi</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-16">2022-06-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2633 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;13 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#my-system-specifications">My System Specifications.</a></li>
+        <li><a href="#the-importance-of-gpus">The Importance of GPUS.</a></li>
+        <li><a href="#getting-started">Getting Started.</a></li>
+        <li><a href="#the-model">The Model.</a></li>
+        <li><a href="#the-vgg16-model">The VGG16 Model.</a></li>
+        <li><a href="#the-vgg15-model-architecture">The VGG15 Model Architecture.</a></li>
+        <li><a href="#building-the-project">Building the project</a></li>
+        <li><a href="#creating-the-html-template">Creating the HTML template.</a></li>
+        <li><a href="#styling-the-template">Styling the Template.</a></li>
+        <li><a href="#model-implementation-in-flask">Model Implementation in Flask.</a></li>
+        <li><a href="#loading-the-image">Loading the image.</a></li>
+        <li><a href="#classification-and-prediction">Classification and Prediction.</a></li>
+        <li><a href="#integrating-to-the-template">Integrating to the Template.</a></li>
+        <li><a href="#conclusion">Conclusion.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="introduction">Introduction.</h1>
+<p>In this article, I will guide you through the processes I went through to create an image classifier using the Flask framework, the Keras library and Google&rsquo;s popular machine learning library, Tensorflow. It was quite an <a href="https://github.com/grayoj/image-classifier" target="_blank" rel="noopener noreffer ">interesting project that managed to gain over nineteen stars on Github, as at the time of writing this article</a>. I was really pleased with the project, thus I humbly decided to share the entire workflow.</p>
+<h3 id="my-system-specifications">My System Specifications.</h3>
+<p>I love to classify my system specifications as minimalistic to engage in training neural networks and machine learning models. I use a hewlett-packard machine that runs the Linux Operating System, specifically Ubuntu, which is a fantastic debian-based distribution that I cannot just abandon for other alternatives. Below are my specifications:</p>
+<ol>
+<li>Intel Core i7 (10th Generation).</li>
+<li>Nvidia GeForce, 2GB GPU.</li>
+<li>8GB RAM.</li>
+<li>250GB SSD plus 1TB of HHD.</li>
+</ol>
+<h3 id="the-importance-of-gpus">The Importance of GPUS.</h3>
+<p>The Graphic Processing Unit, abbreviated as GPU, is a unique electronic circuit that offers parallel processing and is used to accelerate the rendering of computer graphics. GPUs are implemented within the deep learning space to to accelerate training and inference for resource and computationally intensive models. Their importance cannot be overemphasized as they contain specialized cores unlike a CPU that distribute the workload or computation across each unit to deliver a much faster performance. So I really recommend using a system with GPU to train models. I had to destroy my wallet to get a GPU machine, but it was worth it.</p>
+<p>I suggest you purchase some cloud based solutions that would give you access into a cluster or instance of compute that provides adequate GPU that would suffice for a specific task. There are several cloud providers available for this purpose.</p>
+<h3 id="getting-started">Getting Started.</h3>
+<p>First and foremost, we need to satisfy some requirements otherwise the installation of certain dependencies that are pertinet to building the platform. Hence, we must review the context of the project and understand the reason for the selected tools for the project.</p>
+<ol>
+<li><code>Tensorflow</code>: Tensorflow is Google&rsquo;s open source machine learning library used internally as well for their Machine Learning driven solutions.</li>
+<li><code>Keras</code>: This is a python based interface that acts as a layer on top of TensorFlow, to ease the abstraction and improve the implementation.</li>
+<li><code>Flask</code>: This is a fantastic microframework used for building web applications written in Python. It has always been my preferred approach to developing scalable RESTful APIs in Python, over Django.</li>
+<li><code>Pip</code>: This is the official package manager for Python which provides the above libraries hosted on <a href="https://pipy.org" target="_blank" rel="noopener noreffer ">Python&rsquo;s open source library platform</a>.</li>
+</ol>
+<h3 id="the-model">The Model.</h3>
+<p>One significant thing to note is that we are not explicitly writing a machine learning model from scratch. That would be quite exhausting. Why reinvent the wheel when you have already trained models available to integrate? Hell no.</p>
+<p>So for our prestigious model, which I cherry-picked from several options and sources. It is called the &ldquo;VGG16.&rdquo;</p>
+<p>It sounds like a rocket model crafted for another adventure into the solar system. Or a codename for a russian spy. As ludicrous as it may seem, the name of the model played an agurably important role in grabbing my attention.</p>
+<h3 id="the-vgg16-model">The VGG16 Model.</h3>
+<blockquote>
+<p>I truly believe in the importance of reviewing academic papers that cite or basically illustrate the entire context of the model available. Therefore, I was able to obtain some pretty cool sources. I suggest this <a href="https://arxiv.org/abs/1409.1556" target="_blank" rel="noopener noreffer ">paper. It was very intriguing</a></p>
+</blockquote>
+<p>VGG16 refers to the VGG model, also called VGGNet. It is a convolution neural network (CNN) model supporting 16 layers. So basically, the VGG16 model is a convolution neural network designed primarily for the sole purpose of localization and classification. It supports up to sixteen perceptron layers. Neural networks are made up of components called layers.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://www.theclickreader.com/wp-content/uploads/2020/07/cnn-architecture-1024x576.png"
+        data-srcset="https://www.theclickreader.com/wp-content/uploads/2020/07/cnn-architecture-1024x576.png, https://www.theclickreader.com/wp-content/uploads/2020/07/cnn-architecture-1024x576.png 1.5x, https://www.theclickreader.com/wp-content/uploads/2020/07/cnn-architecture-1024x576.png 2x"
+        data-sizes="auto"
+        alt="https://www.theclickreader.com/wp-content/uploads/2020/07/cnn-architecture-1024x576.png"
+        title="Covolutional Neural Network" /></p>
+<p><!-- raw HTML omitted -->Image Credit: The Click Reader<!-- raw HTML omitted --></p>
+<p>For instance the covolutional neural network consists of three layers, primarily the <em>pooling layer, activation layer and covolutional layer</em>, with these three layers containing a speficic amount of weighted input that can be received. I do not want to go over neural networks here, I have a seperate article for that in theory. So I may appear quite evasive of the concepts I may subconciously instigate possibly as a means of clarifications to solidify my propositions and explanations.</p>
+<p>So let us do more fun stuff. Try and capture the below diagramatical represenation of the VGG16 Model.</p>
+<h3 id="the-vgg15-model-architecture">The VGG15 Model Architecture.</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/max/1400/1*NNifzsJ7tD2kAfBXt3AzEg.webp"
+        data-srcset="https://miro.medium.com/max/1400/1*NNifzsJ7tD2kAfBXt3AzEg.webp, https://miro.medium.com/max/1400/1*NNifzsJ7tD2kAfBXt3AzEg.webp 1.5x, https://miro.medium.com/max/1400/1*NNifzsJ7tD2kAfBXt3AzEg.webp 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/max/1400/1*NNifzsJ7tD2kAfBXt3AzEg.webp"
+        title="Structure" /></p>
+<p>The VGG16 is composed of $13$ convolutional layers, $5$ max-pooling layers, and $3$ fully connected layers. The number of layers with tunable parameters sums up to a total of $16$. Giving it the number preceding the name.</p>
+<p>The number of filters in the first block as shown is $64$. The number is doubled in the subsequent blocks until it gets to $512$. The model ends with two connected hidden layers a single output layer. The two fully connected layers have the same number of neurons which sums up to $4096$. The output layer contains a total of $1000$ neurons corresponding to the number of categories of the Image net dataset.</p>
+<p>We would implement the following algorithm in the project. It is worthy to note that the source code was obtained from the Keras Team. The reference to the same paper I cited is coincidentally referenced in the code.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;VGG16 model for Keras.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2"># Reference
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">- [Very Deep Convolutional Networks for Large-Scale Image Recognition](
+</span></span></span><span class="line"><span class="cl"><span class="s2">    https://arxiv.org/abs/1409.1556) (ICLR 2015)
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">get_submodules_from_kwargs</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">imagenet_utils</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.imagenet_utils</span> <span class="kn">import</span> <span class="n">decode_predictions</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.imagenet_utils</span> <span class="kn">import</span> <span class="n">_obtain_input_shape</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">preprocess_input</span> <span class="o">=</span> <span class="n">imagenet_utils</span><span class="o">.</span><span class="n">preprocess_input</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">WEIGHTS_PATH</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https://github.com/fchollet/deep-learning-models/&#39;</span>
+</span></span><span class="line"><span class="cl">                <span class="s1">&#39;releases/download/v0.1/&#39;</span>
+</span></span><span class="line"><span class="cl">                <span class="s1">&#39;vgg16_weights_tf_dim_ordering_tf_kernels.h5&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">WEIGHTS_PATH_NO_TOP</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https://github.com/fchollet/deep-learning-models/&#39;</span>
+</span></span><span class="line"><span class="cl">                       <span class="s1">&#39;releases/download/v0.1/&#39;</span>
+</span></span><span class="line"><span class="cl">                       <span class="s1">&#39;vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">VGG16</span><span class="p">(</span><span class="n">include_top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">input_tensor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">input_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">pooling</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">classes</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Instantiates the VGG16 architecture.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Optionally loads weights pre-trained on ImageNet.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Note that the data format convention used by the model is
+</span></span></span><span class="line"><span class="cl"><span class="s2">    the one specified in your Keras config at `~/.keras/keras.json`.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    # Arguments
+</span></span></span><span class="line"><span class="cl"><span class="s2">        include_top: whether to include the 3 fully-connected
+</span></span></span><span class="line"><span class="cl"><span class="s2">            layers at the top of the network.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        weights: one of `None` (random initialization),
+</span></span></span><span class="line"><span class="cl"><span class="s2">              &#39;imagenet&#39; (pre-training on ImageNet),
+</span></span></span><span class="line"><span class="cl"><span class="s2">              or the path to the weights file to be loaded.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        input_tensor: optional Keras tensor
+</span></span></span><span class="line"><span class="cl"><span class="s2">            (i.e. output of `layers.Input()`)
+</span></span></span><span class="line"><span class="cl"><span class="s2">            to use as image input for the model.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        input_shape: optional shape tuple, only to be specified
+</span></span></span><span class="line"><span class="cl"><span class="s2">            if `include_top` is False (otherwise the input shape
+</span></span></span><span class="line"><span class="cl"><span class="s2">            has to be `(224, 224, 3)`
+</span></span></span><span class="line"><span class="cl"><span class="s2">            (with `channels_last` data format)
+</span></span></span><span class="line"><span class="cl"><span class="s2">            or `(3, 224, 224)` (with `channels_first` data format).
+</span></span></span><span class="line"><span class="cl"><span class="s2">            It should have exactly 3 input channels,
+</span></span></span><span class="line"><span class="cl"><span class="s2">            and width and height should be no smaller than 32.
+</span></span></span><span class="line"><span class="cl"><span class="s2">            E.g. `(200, 200, 3)` would be one valid value.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        pooling: Optional pooling mode for feature extraction
+</span></span></span><span class="line"><span class="cl"><span class="s2">            when `include_top` is `False`.
+</span></span></span><span class="line"><span class="cl"><span class="s2">            - `None` means that the output of the model will be
+</span></span></span><span class="line"><span class="cl"><span class="s2">                the 4D tensor output of the
+</span></span></span><span class="line"><span class="cl"><span class="s2">                last convolutional block.
+</span></span></span><span class="line"><span class="cl"><span class="s2">            - `avg` means that global average pooling
+</span></span></span><span class="line"><span class="cl"><span class="s2">                will be applied to the output of the
+</span></span></span><span class="line"><span class="cl"><span class="s2">                last convolutional block, and thus
+</span></span></span><span class="line"><span class="cl"><span class="s2">                the output of the model will be a 2D tensor.
+</span></span></span><span class="line"><span class="cl"><span class="s2">            - `max` means that global max pooling will
+</span></span></span><span class="line"><span class="cl"><span class="s2">                be applied.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        classes: optional number of classes to classify images
+</span></span></span><span class="line"><span class="cl"><span class="s2">            into, only to be specified if `include_top` is True, and
+</span></span></span><span class="line"><span class="cl"><span class="s2">            if no `weights` argument is specified.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    # Returns
+</span></span></span><span class="line"><span class="cl"><span class="s2">        A Keras model instance.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    # Raises
+</span></span></span><span class="line"><span class="cl"><span class="s2">        ValueError: in case of invalid argument for `weights`,
+</span></span></span><span class="line"><span class="cl"><span class="s2">            or invalid input shape.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">backend</span><span class="p">,</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">keras_utils</span> <span class="o">=</span> <span class="n">get_submodules_from_kwargs</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">weights</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;imagenet&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">}</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">weights</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;The `weights` argument should be either &#39;</span>
+</span></span><span class="line"><span class="cl">                         <span class="s1">&#39;`None` (random initialization), `imagenet` &#39;</span>
+</span></span><span class="line"><span class="cl">                         <span class="s1">&#39;(pre-training on ImageNet), &#39;</span>
+</span></span><span class="line"><span class="cl">                         <span class="s1">&#39;or the path to the weights file to be loaded.&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">weights</span> <span class="o">==</span> <span class="s1">&#39;imagenet&#39;</span> <span class="ow">and</span> <span class="n">include_top</span> <span class="ow">and</span> <span class="n">classes</span> <span class="o">!=</span> <span class="mi">1000</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;If using `weights` as `&#34;imagenet&#34;` with `include_top`&#39;</span>
+</span></span><span class="line"><span class="cl">                         <span class="s1">&#39; as true, `classes` should be 1000&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Determine proper input shape</span>
+</span></span><span class="line"><span class="cl">    <span class="n">input_shape</span> <span class="o">=</span> <span class="n">_obtain_input_shape</span><span class="p">(</span><span class="n">input_shape</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                      <span class="n">default_size</span><span class="o">=</span><span class="mi">224</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                      <span class="n">min_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                      <span class="n">data_format</span><span class="o">=</span><span class="n">backend</span><span class="o">.</span><span class="n">image_data_format</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">                                      <span class="n">require_flatten</span><span class="o">=</span><span class="n">include_top</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                      <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">input_tensor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">img_input</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">backend</span><span class="o">.</span><span class="n">is_keras_tensor</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">img_input</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">tensor</span><span class="o">=</span><span class="n">input_tensor</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">img_input</span> <span class="o">=</span> <span class="n">input_tensor</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Block 1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block1_conv1&#39;</span><span class="p">)(</span><span class="n">img_input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block1_conv2&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block1_pool&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Block 2</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block2_conv1&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block2_conv2&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block2_pool&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Block 3</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block3_conv1&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block3_conv2&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block3_conv3&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block3_pool&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Block 4</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block4_conv1&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block4_conv2&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block4_conv3&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block4_pool&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Block 5</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block5_conv1&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block5_conv2&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block5_conv3&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;block5_pool&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">include_top</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Classification block</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;flatten&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">4096</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;fc1&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">4096</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;fc2&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;predictions&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">pooling</span> <span class="o">==</span> <span class="s1">&#39;avg&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">GlobalAveragePooling2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">pooling</span> <span class="o">==</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">GlobalMaxPooling2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Ensure that the model takes into account</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># any potential predecessors of `input_tensor`.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">input_tensor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inputs</span> <span class="o">=</span> <span class="n">keras_utils</span><span class="o">.</span><span class="n">get_source_inputs</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inputs</span> <span class="o">=</span> <span class="n">img_input</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Create model.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;vgg16&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Load weights.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">weights</span> <span class="o">==</span> <span class="s1">&#39;imagenet&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">include_top</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">weights_path</span> <span class="o">=</span> <span class="n">keras_utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="s1">&#39;vgg16_weights_tf_dim_ordering_tf_kernels.h5&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">WEIGHTS_PATH</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cache_subdir</span><span class="o">=</span><span class="s1">&#39;models&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">file_hash</span><span class="o">=</span><span class="s1">&#39;64373286793e3c8b2b4e3219cbf3544b&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">weights_path</span> <span class="o">=</span> <span class="n">keras_utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="s1">&#39;vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">WEIGHTS_PATH_NO_TOP</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cache_subdir</span><span class="o">=</span><span class="s1">&#39;models&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">file_hash</span><span class="o">=</span><span class="s1">&#39;6d6bbae143d832006294945121d1f1fc&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="o">.</span><span class="n">load_weights</span><span class="p">(</span><span class="n">weights_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">backend</span><span class="o">.</span><span class="n">backend</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;theano&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">keras_utils</span><span class="o">.</span><span class="n">convert_all_kernels_in_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="o">.</span><span class="n">load_weights</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">model</span>
+</span></span></code></pre></div><h3 id="building-the-project">Building the project</h3>
+<p>Now we have an overview, we can commence the development of the image classifier, finally. The first thing I suggest you do is create a folder for the project.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo mkdir image-classifier
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> image-classifier
+</span></span></code></pre></div><p>Create a virtual environment. This is relatively simple to do.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install on Ubuntu</span>
+</span></span><span class="line"><span class="cl">sudo apt-get install python3-venv
+</span></span><span class="line"><span class="cl">python3 -m venv .venv
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> .venv/bin/activate
+</span></span></code></pre></div><p>Please ensure you fulfilled the requirements above. Ensure you have the Python programming language installed. Now we would neet to set up our dependencies.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install pip3
+</span></span><span class="line"><span class="cl">python -m pip3 install --upgrade pip
+</span></span><span class="line"><span class="cl">pip3 install keras, flask, tensorflow
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.ibb.co/crSNBhR/Screenshot-from-2023-01-23-12-31-38.png"
+        data-srcset="https://i.ibb.co/crSNBhR/Screenshot-from-2023-01-23-12-31-38.png, https://i.ibb.co/crSNBhR/Screenshot-from-2023-01-23-12-31-38.png 1.5x, https://i.ibb.co/crSNBhR/Screenshot-from-2023-01-23-12-31-38.png 2x"
+        data-sizes="auto"
+        alt="https://i.ibb.co/crSNBhR/Screenshot-from-2023-01-23-12-31-38.png"
+        title="Installing Dependencies" /></p>
+<p>Create a file named <code>app.py</code> in the directory you created. This would be the main file that Flask will startup. Then append the following line of code to the <code>app.py</code> file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;Hello, Flask!&#34;</span>
+</span></span></code></pre></div><p>Then run the following command: <code>python -m flask run</code> to boot up the application.</p>
+<h3 id="creating-the-html-template">Creating the HTML template.</h3>
+<p>The application would need a front-end to run in the browser. Therefore to achieve this, we would need to create a template in HTML. You should be able to do this by first creating a folder called <code>&quot;template&quot;</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo mkdir template
+</span></span><span class="line"><span class="cl">touch app.html
+</span></span><span class="line"><span class="cl">sudo vi app.html
+</span></span></code></pre></div><p>Then append the following code for the HTML template. We are using some Bootstrap for simple styling served through a content delivery network.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!-- The Template: Gerald Maduabuchi --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Python Image Classification | Flask<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;app.css&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">link</span>
+</span></span><span class="line"><span class="cl">   <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span>
+</span></span><span class="line"><span class="cl">   <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css&#34;</span>
+</span></span><span class="line"><span class="cl">   <span class="na">integrity</span><span class="o">=</span><span class="s">&#34;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&#34;</span>
+</span></span><span class="line"><span class="cl">   <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar navbar-default navbar-fixed-top nav&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navbar-brand&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;app.html&#34;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&#34;Go to home section&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>Python Image Classification<span class="p">&lt;/</span><span class="nt">a</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">form</span>
+</span></span><span class="line"><span class="cl">  <span class="na">action</span><span class="o">=</span><span class="s">&#34;/&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">method</span><span class="o">=</span><span class="s">&#34;POST&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">enctype</span><span class="o">=</span><span class="s">&#34;multipart/form-data&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-style&#34;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-group&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;file image&#34;</span><span class="p">&gt;</span>Enter your Image<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&lt;</span><span class="nt">input</span>
+</span></span><span class="line"><span class="cl">    <span class="na">type</span><span class="o">=</span><span class="s">&#34;file&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">class</span><span class="o">=</span><span class="s">&#34;form-control&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">name</span><span class="o">=</span><span class="s">&#34;fileImage&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;enter image&#34;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">/&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Predict&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;btn btn-success&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>We created a form with a <code>POST</code> method to handle the submission of the image as an input from the browser to Flask, which would then leverage on the power of the VGG16 model to classify the image and return a prediction score. We would later implement the latter as we proceed.</p>
+<h3 id="styling-the-template">Styling the Template.</h3>
+<p>For some extra styling, we would create an <code>css/app.css</code> then write the following styling otherwise rulesets to make our site look less ugly. I am still in the process of improving my front-end development skills, so bear with me the atrocious interface you may behold. It may be as generic as you think.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">form-style</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="k">padding-top</span><span class="p">:</span> <span class="mi">25</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="k">width</span><span class="p">:</span> <span class="mi">50</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="k">margin-left</span><span class="p">:</span> <span class="mi">50</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">&#39;file&#39;</span><span class="o">]</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="k">padding-bottom</span><span class="p">:</span> <span class="mi">3</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="model-implementation-in-flask">Model Implementation in Flask.</h3>
+<p>In your <code>app.py</code> we are going to write the basic logic, otherwise implementations of the VGG16 model in our application. It is quite straightforward, and does not in anyway represent the level of complexity we covered in the introductory section of the article.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Importing flask module</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span>
+</span></span></code></pre></div><p>First and foremost, you need to import the flask module which you installed by means of the pip tooling. Including the render_template to render the HTML template we wrote, as well as the request to retrieve requests from the client of our application.</p>
+<p>Below, we carefully import the modules required for processing and the VGG16 model into the flask application. I will carefully elaborate on each import and its own contribution to the functionality.</p>
+<ul>
+<li>The <code>img_to_array</code> module is for converting a loaded image in PIL format into a <a href="https://numpy.org" target="_blank" rel="noopener noreffer ">NumPy</a> array.</li>
+<li>The <code>load_img</code>, as the name implies is to load an image into the model.</li>
+<li>The <code>preprocess_input</code> is meant to adequate the image to a format that the VGG16 requires.</li>
+<li>The <code>VGG16</code> module is the library or implementation itself that we would call into the application.</li>
+<li>The <code>decode_predictions</code> is used to provide the prediction accuracy score, otherwise estimate.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Importing Keras Modules</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">img_to_array</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">load_img</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">keras.applications.vgg16</span> <span class="kn">import</span> <span class="n">preprocess_input</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">keras.applications.vgg16</span> <span class="kn">import</span> <span class="n">VGG16</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">keras.applications.vgg16</span> <span class="kn">import</span> <span class="n">decode_predictions</span>
+</span></span></code></pre></div><p>Now we need to write out new methods to start the application. We would also assign the VGG16 instansiation, to the variable <code>model</code> to represent the initialization across our codebase.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Start App</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#The Model.</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">VGG16</span><span class="p">()</span>
+</span></span></code></pre></div><p>Next we would assign a sample route again, and write a function to render the <code>app.html</code> template accordingly. This could be done effectively by writing the below code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Get Route</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#Render Template</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;app.html&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Now, this is where the entire logic is written. We would need to receive inputs from the post into the model.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Receive input and post to model</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Predict function</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">predict</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fileImage</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s1">&#39;fileImage&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image_path</span> <span class="o">=</span> <span class="s2">&#34;./images/&#34;</span> <span class="o">+</span> <span class="n">fileImage</span><span class="o">.</span><span class="n">filename</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fileImage</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+</span></span></code></pre></div><p>Here we request the image path, within the predict function we have written.</p>
+<h3 id="loading-the-image">Loading the image.</h3>
+<p>Here we load the image into our application by calling the <code>load_img</code> method imported, passing the <code>image_path</code> as a parameter and the target size to conform to the requirements of the model.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#Load Image</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image</span> <span class="o">=</span> <span class="n">load_img</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image</span> <span class="o">=</span> <span class="n">img_to_array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</span></span></code></pre></div><h3 id="classification-and-prediction">Classification and Prediction.</h3>
+<p>Now we execute the prediction, and classification of the input. Then we return the prediction score to the <code>app.html</code> template.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1">#Process Image</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image</span> <span class="o">=</span> <span class="n">preprocess_input</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#Make Predictions</span>
+</span></span><span class="line"><span class="cl">    <span class="n">yhat</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span> <span class="o">=</span> <span class="n">decode_predictions</span><span class="p">(</span><span class="n">yhat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#Make Classifications</span>
+</span></span><span class="line"><span class="cl">    <span class="n">classification</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> (</span><span class="si">%.2f%%</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">label</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;app.html&#39;</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="n">classification</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="integrating-to-the-template">Integrating to the Template.</h3>
+<p>Since we are using flask, we would need to call the prediction method by the following convention into our html template to fully integrate it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!-- Predict Function --&gt;</span>
+</span></span><span class="line"><span class="cl">{% if prediction %}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>The image you uploaded is a {{prediction}}<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{% endif %}
+</span></span></code></pre></div><p>Excellent. I forgot. It is required to write in the initialization method for the flask application and assign a port number like so:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Intitalise Port</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span></code></pre></div><p>Run <code>python -m flask run</code> to start the application.</p>
+<h3 id="conclusion">Conclusion.</h3>
+<p>Did you get to the end solider? If you did, congratulations. You have successfully created a flask application that executes image recognition. Till the next time we meet. Have a nice day. Share the article and also, I am open to any suggestions. Also, feel free to explore the <a href="https://github.com/grayoj/image-classifier" target="_blank" rel="noopener noreffer ">repository</a> if it does not seem to work for you the way you want it to, follow the instructions and then you should be all set. Regards.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-06-16</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://graysnotes.com/posts/building-image-classifier/" data-title="Building An Image Classifier" data-via="map[id:@geraldabuchi prefix:https://twitter/ title:Twitter weight:0]"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://graysnotes.com/posts/building-image-classifier/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://graysnotes.com/posts/building-image-classifier/" data-title="Building An Image Classifier"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://graysnotes.com/posts/building-image-classifier/" data-title="Building An Image Classifier"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://graysnotes.com/posts/building-image-classifier/" data-title="Building An Image Classifier"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/introduction-to-ai-2019/" class="prev" rel="prev" title="Artificial Intelligence: The trend, myths, approaches, philosophy and science."><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Artificial Intelligence: The trend, myths, approaches, philosophy and science.</a>
+            <a href="/posts/fibonacci-in-c/" class="next" rel="next" title="Fibonacci Algorithms in C">Fibonacci Algorithms in C<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Gerald Maduabuchi</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

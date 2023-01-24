@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Writing better Git Commits - Gray&#39;s Notes</title><meta name="Description" content="The official programming blog of Gerald Maduabuchi"><meta property="og:title" content="Writing better Git Commits" />
+<meta property="og:description" content="Introduction. In this article you would learn how to properly structure and craft decent, intuitive and readable commit messages that summarise the context of the code you published to either a remote or local branch of a repository. This would be helpful if you work on collaborative projects, and would also save you the mental stress of trying to figure out a commit. I was once guilty of creating incredibly confusing and inappropriate commit messages, that did not capture the context of my code." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://graysnotes.com/posts/commiting-in-git/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-22T16:05:12+01:00" />
+<meta property="article:modified_time" content="2023-01-22T16:05:12+01:00" /><meta property="og:site_name" content="Gray&#39;s Notes" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Writing better Git Commits"/>
+<meta name="twitter:description" content="Introduction. In this article you would learn how to properly structure and craft decent, intuitive and readable commit messages that summarise the context of the code you published to either a remote or local branch of a repository. This would be helpful if you work on collaborative projects, and would also save you the mental stress of trying to figure out a commit. I was once guilty of creating incredibly confusing and inappropriate commit messages, that did not capture the context of my code."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://graysnotes.com/posts/commiting-in-git/" /><link rel="prev" href="http://graysnotes.com/posts/musketeers-of-api/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Writing better Git Commits",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/graysnotes.com\/posts\/commiting-in-git\/"
+        },"image": ["https:\/\/i.ibb.co\/zhwH2Tc\/7e0cd014097697-5627d5f7bac0c.png"],"genre": "posts","keywords": "Git, Commits, Version Control","wordcount":  1518 ,
+        "url": "http:\/\/graysnotes.com\/posts\/commiting-in-git\/","datePublished": "2023-01-22T16:05:12+01:00","dateModified": "2023-01-22T16:05:12+01:00","publisher": {
+            "@type": "Organization",
+            "name": "Grays Notes","logo": "https:\/\/i.ibb.co\/zhwH2Tc\/7e0cd014097697-5627d5f7bac0c.png"},"author": {
+                "@type": "Person",
+                "name": "Gerald Maduabuchi"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Gray&#39;s Notes"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        data-srcset="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 1.5x, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 2x"
+        data-sizes="auto"
+        alt="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        title="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Gray&#39;s Notes"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        data-srcset="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 1.5x, https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png 2x"
+        data-sizes="auto"
+        alt="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png"
+        title="https://i.ibb.co/zhwH2Tc/7e0cd014097697-5627d5f7bac0c.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Writing better Git Commits</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Gerald Maduabuchi</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-22">2023-01-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1518 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction.</a></li>
+        <li><a href="#what-is-git">What is Git?</a></li>
+        <li><a href="#why-use-git">Why use Git?</a></li>
+        <li><a href="#installing-git">Installing Git</a></li>
+        <li><a href="#working-with-git">Working with Git.</a></li>
+        <li><a href="#adding-and-commiting">Adding and Commiting</a></li>
+        <li><a href="#commiting-more-characters">Commiting more characters.</a></li>
+        <li><a href="#commit-formats">Commit Formats</a></li>
+        <li><a href="#commit-templates">Commit Templates</a></li>
+        <li><a href="#using-commit-templates">Using commit templates.</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="introduction">Introduction.</h3>
+<p>In this article you would learn how to properly structure and craft decent, intuitive and readable commit messages that summarise the context of the code you published to either a remote or local branch of a repository. This would be helpful if you work on collaborative projects, and would also save you the mental stress of trying to figure out a commit. I was once guilty of creating incredibly confusing and inappropriate commit messages, that did not capture the context of my code. I totally underestimated the concept of good commit messages, feeling &ldquo;code readablity&rdquo; was far more important to understand. That the code itself should tell, and not the messages. I was wrong, and I do not want you to be caught up in a similar situation.</p>
+<h3 id="what-is-git">What is Git?</h3>
+<p>Git is a popular version control tool invented by Linus Torvalds. It is used to manage, maintain and version software efficiently. There is a possibility you have stumbled across the tool, or you have directly used this tool to maintain your projects.</p>
+<h3 id="why-use-git">Why use Git?</h3>
+<p>Git is the most popular distributed version control tool in comparison to its other competitors. This is because of its proven efficiency and interoperability with code hosting platforms such as Github, Gitlab and Bitbucket. These platforms offer remote repository hosting for free and at a cost, for individuals and even enterprise organisations. Git also comes preinstalled with a lot of Linux based distributions, such as Ubuntu.</p>
+<h3 id="installing-git">Installing Git</h3>
+<p>Linux distributions usually come packaged with Git. The OS X system by Apple also in many cases comes with Git preinstalled, since it is Unix based. To verify a Git installation on any operating system, you should run the command <code>git</code> in your terminal for either Linux, Windows or MacOS.</p>
+<p>If you receive a response showing options to use the Git command with, then you have it installed. If it returns a response saying the &ldquo;command is not found,&rdquo; then you would need to go ahead and install git.</p>
+<p>You could easily install git for windows by visiting their website <a href="https://git-scm.com" target="_blank" rel="noopener noreffer ">here</a>.</p>
+<h3 id="working-with-git">Working with Git.</h3>
+<p>To illustrate the concept of proper commits in this article, we are going to create a new directory. Run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir git-commiting
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> git-commiting
+</span></span><span class="line"><span class="cl">vi
+</span></span></code></pre></div><p>Now we have created a new directory, we would need to initialise git. We could do this by running the command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span></code></pre></div><p>This would initialise an empty git repository locally, for our project. The next thing you should do, is to create a file which we are going to use to illustrate commiting.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">touch example.py
+</span></span><span class="line"><span class="cl">vi example.py
+</span></span></code></pre></div><p>This creates a file for us in the directory. Edit the file, and just add the following piece of code below:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Testing commits in git.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Then <code>:wq</code> out of the file into your directory once more.</p>
+<blockquote>
+<p>Note all examples and commands being used to edit, modify and create files are Linux-Unix based commands. I am also using Vim, a free open source editor available already for the aforementioned operating systems.</p>
+</blockquote>
+<p>You can write in <code>:sh</code> to switch to a shell environment within your workspace. On your directory, you are going to run <code>git status</code> to see the status of your files within your local repository.</p>
+<h3 id="adding-and-commiting">Adding and Commiting</h3>
+<p>Now, you would need to add the file to save it within your local repository on your device. This could be done this way:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add example.py
+</span></span></code></pre></div><p>Ensure you are within the right directory to add the above file. It should be successful. It will not really return any response to validate the addition of the new file, but you can run <code>git status</code> once again to verify.</p>
+<p>To add all files, instead of adding one by one—you should run the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add .
+</span></span></code></pre></div><p>This adds all files and stages them for commiting within your local repository.</p>
+<p>The next step is committing. A commit is used to capture the state of a project within the development timeline. This a helpful, powerful feature of git.</p>
+<p>Through commits, we can track additions to a codebase, deletions and even roll back to a different state or version our application was in.</p>
+<p>Commiting in git is quite simple. All you need to do is type in <code>git commit</code> and then pass in the <code>-m</code> flag, which represents &ldquo;commit message.&rdquo;</p>
+<p>Below is how to implement the above steps:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git commit -m <span class="s2">&#34;add new file.&#34;</span>
+</span></span></code></pre></div><p>Hit enter to successfully make a commit to the local repository. Now to see the commit, you could simply run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git log
+</span></span></code></pre></div><p>This would show you the commit log of the project.</p>
+<h3 id="commiting-more-characters">Commiting more characters.</h3>
+<p>You could commit over a 100 characters to be more descriptive. This helps other developers, especially when working in a team understand the purpose or context of your commit. In order to do this, create a new file like how we did above called <code>example2.py</code>. Then you could run the following command to get more space to write a longer commit:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git commit
+</span></span></code></pre></div><p>In the shell, within that empty space—enter in your commit message like so, then just like in Vim, write out using <code>:wq</code>
+That should commit your file.</p>
+<p>So you have successfully committed a longer message. But how can you do this from the terminal on a line, without having to switch to that interface? This is where the <code>-m</code> tag comes into play.</p>
+<p>To commit a longer message on the same line, you could do this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git commit -m <span class="s2">&#34;This is the title.&#34;</span> -m <span class="s2">&#34;This is the Body.&#34;</span> <span class="s2">&#34;These are the points&#34;</span> -m <span class="s2">&#34;* Point 1&#34;</span> -m <span class="s2">&#34;* Point 2.&#34;</span>
+</span></span></code></pre></div><p>This would generate a proper format for a commit.</p>
+<h3 id="commit-formats">Commit Formats</h3>
+<p>A popular commit format to use for your projects and in a professional setting whether open source, or not is the below format:</p>
+<pre tabindex="0"><code>&lt;Title&gt;  ------- Commit Title.
+&lt;Body&gt; ------- Commit Description.
+&lt;Footer&gt; ----- Commit Footer.
+</code></pre><p>The commit title should summarise or contain the context of the commit. The Body should contain the description of the commit. Why you made the commit, or the issue addressed. The Footer should contain a link to a bug, an addressed pull request or an issue made on a platform such as Github preferably.</p>
+<p>Your company and coworkers would absolutely love you for structuring it this way.</p>
+<h3 id="commit-templates">Commit Templates</h3>
+<p>A commit template is basically a format which you could use to construct your commit messages to make them better and more intuitive. In basic commit template, we have the following:</p>
+<ol>
+<li>
+<p><code>init</code> - This stands for project initialisation. Take for example creating an initial Vue JS application scaffolding.</p>
+</li>
+<li>
+<p><code>feat</code> - This represents project feature. This should be used if you added a new feature to the codebase.</p>
+</li>
+<li>
+<p><code>fix</code> - Did you fix a bug in the codebase? Then you should use this for your commit.</p>
+</li>
+<li>
+<p><code>docs</code> - Let us assume you updated the readme.md or any other markdown documentation for the project, then you should use this.</p>
+</li>
+<li>
+<p><code>style</code> - Maybe you changed the font styles? Some colours? Or some designs? Then you should use this.</p>
+</li>
+<li>
+<p><code>test</code> - Did you write a unit test for a piece of code you are commiting? Then use this.</p>
+</li>
+<li>
+<p><code>build</code> - used for dependency related commits, so strapping it on those package.json files is absolutely good.</p>
+</li>
+<li>
+<p><code>chore</code> - This is best used for CI/CD commits. You would usually find this appended to a dockerfile or workflow.</p>
+</li>
+<li>
+<p><code>perf</code> - Does your commit feature a performance optimisation of some sort? Then this is best suited.</p>
+</li>
+<li>
+<p><code>refactor</code> - Did you change the formatting? Or make a change that does not really influence the functionality of the software? Then you should use this.</p>
+</li>
+</ol>
+<h3 id="using-commit-templates">Using commit templates.</h3>
+<p>Here, I will illustrate the application of a commit template to staging a git commit either to a local or remote repository. To do this, head over to the same directory you were in at the start of the project titled <code>git-commiting</code></p>
+<p>Now we would make a change.</p>
+<p>In the directory run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vi example.py
+</span></span></code></pre></div><p>This would open up the file in a Vim environment for edits. Then run the modify the following piece of code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># refactoring</span>
+</span></span><span class="line"><span class="cl"><span class="n">printf</span><span class="p">(</span><span class="s2">&#34;Testing commits in git.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Now follow the same procedure to add the file to the local repository, and commit.
+Before commiting, we are going to implement the above template. To do this, we need to identify the context of the commit and make it as simple and readable as possible. This is a &ldquo;refactor,&rdquo; hence we use the <code>refactor</code> template. We can use either of these conventions for the commit messages:</p>
+<p>Convention one:</p>
+<pre tabindex="0"><code>refactor(Title): Body (Footer if any)
+</code></pre><p>Or</p>
+<p>Convention two:</p>
+<pre tabindex="0"><code>refactor: (Title) Body (Footer if any)
+</code></pre><p>Any of the above conventions works fine. Let us apply the first to this example like so:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git commit -m <span class="s2">&#34;refactor(comment): added comment to code&#34;</span> -m <span class="s2">&#34;* testing out commiting.&#34;</span> -m <span class="s2">&#34;* comments are good.&#34;</span>
+</span></span></code></pre></div><p>We have no Footer in this case, if you do—go ahead and apply it.</p>
+<p>This would generate a nicely crafted commit for us. Run <code>git log</code> to see that beauty. Ah, yes.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Thank you for reading. Feel free to share with your fellow programmers, students, engineers or collaborators.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-22</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://graysnotes.com/posts/commiting-in-git/" data-title="Writing better Git Commits" data-via="map[id:@geraldabuchi prefix:https://twitter/ title:Twitter weight:0]" data-hashtags="Git, Commits, Version Control"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://graysnotes.com/posts/commiting-in-git/" data-hashtag="Git, Commits, Version Control"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://graysnotes.com/posts/commiting-in-git/" data-title="Writing better Git Commits"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://graysnotes.com/posts/commiting-in-git/" data-title="Writing better Git Commits"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://graysnotes.com/posts/commiting-in-git/" data-title="Writing better Git Commits"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/git-commits-version-control/">Git, Commits, Version Control</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/musketeers-of-api/" class="prev" rel="prev" title="Microservices, RPCs, SOAP, REST &amp; GraphQL"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Microservices, RPCs, SOAP, REST & GraphQL</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Gerald Maduabuchi</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
