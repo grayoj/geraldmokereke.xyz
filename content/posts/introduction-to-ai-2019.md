@@ -13,11 +13,7 @@ tags: ['AI, 2019, Article']
 # Introduction
 This article was written on the 24th of November 2019. Prior to my first term
 examinations in the 11th grade. During my tenure in high school. I have always been
-fascinated with AI. This article encompasses the field of Artificial Intelligence, and the
-several approaches applied. It is a quite an elaborate but decent summary of the topic
-targeted towards enthusiasts like myself, both beginners and intermediate learners, or
-persons who would love to get a grasp of this trending technology and what it
-actually entails.
+fascinated with AI. This article encompasses the field of Artificial Intelligence, and the several approaches applied. It is a quite an elaborate but decent summary of the topic targeted towards enthusiasts like myself, both beginners and intermediate learners, or persons who would love to get a grasp of this trending technology and what it actually entails.
 
 ### Brief Overview
 The term Artificial Intelligence, abbreviated as (AI) in many cases, has become
@@ -46,8 +42,7 @@ indistinguishable, such machine is said to have “passed” the Turing test. Tu
 
 unambiguous question, on if machines would be able to think. He further went ahead
 to debate and argue on the context of machines being able to perform cognitive
-functions, outlining certain possibilities. Despite being a good thesis to judge or define
-a machine's “intelligence”, it is however, not a proficient method to analyze or
+functions, outlining certain possibilities. Despite being a good thesis to judge or define a machine's “intelligence”, it is however, not a proficient method to analyze or
 evaluate a machine’s level of intelligence, as it is generally theorized on exhibiting
 human like characteristics and behavior. While we could however, create a solid
 relationship between human level intelligence, and a machine displaying human level
@@ -63,8 +58,8 @@ consciousness. It employs more of a behavioral approach to the mind. Despite the
 clear loopholes in the thesis, it has been pivotal to the development of the popular
 CAPTCHA systems used on websites to determine if the user accessing a session is
 human, by generating numbers, wriggled text, distorted images, or images with
-certain objects recognized by the system. If the user is able to choose from the array of
-images for example, for which contains the object stated, they are allowed to proceed.
+certain objects recognized by the system. If the user is able to choose from the array of images for example, for which contains the object stated, they are allowed to proceed.
+
 This is a demonstration of the Turing Test in a reverse manner to prevent automated
 systems, malicious bot scripts and spam programs from accessing secure platforms.
 The Turing Test should not be mistaken for the "Turing Complete" concept, which is a
@@ -80,11 +75,9 @@ contributes to the receptacle of mortality, life and beliefs. Full consciousness
 implementation in artificial intelligence as a subject matter has however been
 observed as a paradox in many case studies.
 Could human level consciousness eventually conform to artificial intelligence as a
-field? If such is attained, it simply means the acceptance of mortality, orthodox beliefs
-and several other components that could be attributed to our consciousness as
+field? If such is attained, it simply means the acceptance of mortality, orthodox beliefs and several other components that could be attributed to our consciousness as
 humans. The instinct for survival as well, even though these machines or devices do
-not require organic resources to function. It’s indeed a belief which could be likened to
-a myth or fiction.
+not require organic resources to function. It’s indeed a belief which could be likened to a myth or fiction.
 
 ### Artificial Intelligence: The current state
 
@@ -94,9 +87,7 @@ gained from various resources and fictional content. Isaac Asimov’s I, Robot n
 served as a massive impact on the ethics of artificial intelligence. Despite being
 fictional, it has set up a standard which if attained and when explained, could be
 referred to as human level intelligence by machines or advanced intelligence.
-Primitive describes the level of Artificial Intelligence today, despite the available tools,
-applications, approaches, resources and investment on infrastructure used to scale
-and implement several trained models. Computers in nature were historically
+Primitive describes the level of Artificial Intelligence today, despite the available tools, applications, approaches, resources and investment on infrastructure used to scale and implement several trained models. Computers in nature were historically
 designed to execute certain actions, such as mathematical evaluations and tasks,
 within time. The reason for the development of computers, or computing machines
 could be ascribed to the early B.C, during the time when counting devices were
@@ -152,10 +143,7 @@ mapping function that converts input variables represented by $(X)$ to an output
 variable represented by $(Y)$. It solves for the value of f in the sample equation; $Y=f(X)$. Where $f$ represents the mapping function. Regression and classification are products,
 otherwise demonstrations of the concept of supervised learning which would be
 covered in a separate paper: Regression in Supervised Learning. These models are
-utilized to predict data from a set of input variables. Regression is applied to objects,
-and real values, while the latter is applied to categorical data. A regression model
-from samples could predict the following, for instance: The length of an object and
-speed of a computer. The latter could be used to predict certain labels, such as
+utilized to predict data from a set of input variables. Regression is applied to objects, and real values, while the latter is applied to categorical data. A regression model from samples could predict the following, for instance: The length of an object and speed of a computer. The latter could be used to predict certain labels, such as
 intelligent, genius or stupid.
 
 ### Unsupervised Learning
@@ -163,12 +151,7 @@ intelligent, genius or stupid.
 These models are implemented when there are available input variables within a
 provided dataset, but the absence of corresponding or related output variables.
 Concepts such as clustering could be used to group sample objects within a collection
-(cluster) are very much similar to each other than to the objects from a different cluster
-or collection of data, is a popular concept of unsupervised learning. Association
-another method classified under unsupervised learning could also be utilized to
-predict the probability of a co-occurrence in a particular data set. An example of
-association, is a model that could perform a task such as: *“If Gerald purchases
-computers within the corei7 processor range, he would fancy a fast phone as well.”*
+(cluster) are very much similar to each other than to the objects from a different cluster or collection of data, is a popular concept of unsupervised learning. Association another method classified under unsupervised learning could also be utilized to predict the probability of a co-occurrence in a particular data set. An example of association, is a model that could perform a task such as: *“If Gerald purchases computers within the corei7 processor range, he would fancy a fast phone as well.”*
 
 ### Artificial Neural Networks
 
@@ -208,8 +191,7 @@ Boltzmann machine however is a powerful stochastic neural network model and
 algorithm that could be implemented for classification, regression, collaborative
 filtering and dimensionality reduction. Which I also detailed on how it could be
 utilized for predictive analysis, supervision of classifiers for blood samples in
-transfusion. To enable better clarifications, I will proceed to state and explain a few of
-the various types of neural networks today, giving a brief overview on the underlying
+transfusion. To enable better clarifications, I will proceed to state and explain a few of the various types of neural networks today, giving a brief overview on the underlying
 principles behind each of its respective architecture and its implementation. They are:
 Radial Basis Function Neural Network, Modular Neural Network, Recurrent Neural
 Network, Feed Forward Neural Networks, Multi Layer Perceptron Neural Network
@@ -230,9 +212,7 @@ The model implements a customized matrix, to convolute over the images and
 produce a map. This custom matrix is triggered in a random manner and updated by
 the means of backpropagation. Backpropagation is also known as backward
 propagation of errors, and is a system of tuning the weights of the model to reduce the
-error rates and improve it’s efficiency. It helps to calculate a gradient of a loss function
-with respect to all the weights in the network. A pooling layer is responsible for the
-collation and aggregation of the maps produced on the convolutional layer. 
+error rates and improve it’s efficiency. It helps to calculate a gradient of a loss function with respect to all the weights in the network. A pooling layer is responsible for the collation and aggregation of the maps produced on the convolutional layer. 
 
 ### Feed Forward Network
 
@@ -313,15 +293,10 @@ machines would become a host to the software, and would be controlled based on t
 beliefs, thoughts and ideas of the software. Robotics I believe, futuristically would be
 used to grant a significant form of expression to such software. Machines would be able
 to possess artificial organs, such as eyes, that utilize computer vision and heavy image
-processing administered by a compelling neural network too classify, recognize images
-
-in their environment. If this is attained, artificial sight or sight exhibited by robots,
-would be achieved. This is because the human brain plays a very important role in
-sight. As it is responsible for decoding certain images and processing them into a
+processing administered by a compelling neural network too classify, recognize images in their environment. If this is attained, artificial sight or sight exhibited by robots, would be achieved. This is because the human brain plays a very important role in sight. As it is responsible for decoding certain images and processing them into a
 person’s consciousness or mind. Advanced Automation in factories, would be
 employed such that, machines would be able to tackle any defunct device, component,
-facility, object or infrastructure if the system notices an issue, unlike most machines that
-adhere strictly to a specific algorithm.
+facility, object or infrastructure if the system notices an issue, unlike most machines that adhere strictly to a specific algorithm.
 
 
 ### The fears or risk of this Technology?
@@ -378,10 +353,7 @@ labour force already, despite not being as advanced, as automated systems could 
 handle most, to all tasks in the two aforementioned segments with greater proficiency.
 So I do agree, that an impending threat of AI, is unemployment.
 
-For the advantages and goals of Artificial Intelligence, it seems endless, as this article
-would not be able to address effectively. Aspects such as; reduction in human errors,
-which was pivotal to the development of self driving cars to ensure greater accuracy
-when driving to reduce the number of automobile accidents, as well as in research and
+For the advantages and goals of Artificial Intelligence, it seems endless, as this article would not be able to address effectively. Aspects such as; reduction in human errors, which was pivotal to the development of self driving cars to ensure greater accuracy when driving to reduce the number of automobile accidents, as well as in research and
 study, digital assistance, faster decisions, prediction models being utilized to predict
 malignant growth in a woman’s breast at early stages are some advantages of AI. It has
 no limitations and could work, handle and execute tasks within any hour of the day,
@@ -389,18 +361,13 @@ preventing delays. AI would help reduce the number of persons and resources requ
 to handle certain things, and would simplify our daily lives to the highest level.
 It is a no-brainer why this technology is further being developed and improved due to
 the immense benefits. Even though the cost of implementation and infrastructure to
-deploy and apply these models is quite high, it decreases a little by each year, which is a
-good sign of progress. The hardware designed to run and execute these models are
+deploy and apply these models is quite high, it decreases a little by each year, which is a good sign of progress. The hardware designed to run and execute these models are
 being effectively improved upon as well. Most companies are developing accelerated
 hardware devices to manage these models and implementing liquid cooling
 infrastructure in their data centers to compliment the speed, and efficiency.
 
 ### Conclusion
 
-The trend, on AI being generated is certainly worth it, as I dived into the essence of the
-technology, applications, approaches, brief overview, philosophical notes, theoretical
-applications, very brief history, the proponent and covered a few concepts in detail,
-simplifying these terms which I believe would be presentable to any reader. Artificial
-Intelligence is the future, and the future is Artificial Intelligence.
+The trend, on AI being generated is certainly worth it, as I dived into the essence of the technology, applications, approaches, brief overview, philosophical notes, theoretical applications, very brief history, the proponent and covered a few concepts in detail, simplifying these terms which I believe would be presentable to any reader. Artificial Intelligence is the future, and the future is Artificial Intelligence.
 
 Forgive my naivety and ignorance. I know I am in no way competent to deliver my jurisdictions or propositions on the above subject matter at this time.
