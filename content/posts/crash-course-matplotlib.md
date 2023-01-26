@@ -1,7 +1,7 @@
 ---
 title: "Crash Course: Matplotlib and Jupyter Notebook"
 date: 2023-01-25T23:37:44+01:00
-draft: true
+draft: false
 tags: ['Crash Course, ML']
 ---
 
