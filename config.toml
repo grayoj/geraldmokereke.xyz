@@ -4,7 +4,7 @@ baseURL = "http://graysnotes.com"
 theme = "LoveIt"
 
 # website title
-title = "Gray's Notes"
+title = "Gray Matter Blog"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -32,11 +32,21 @@ languageName = "English"
     title = ""
   [[menu.main]]
     weight = 2
+    name = "Heuvera"
+    url = "https://heuvera.com"
+    title = ""
+  [[menu.main]]
+    weight = 2
     identifier = "tags"
     pre = ""
     post = ""
     name = "Tags"
     url = "/tags/"
+    title = ""
+  [[menu.main]]
+    weight = 2
+    name = "My Website"
+    url = "https://geraldmaduabuchi.com"
     title = ""
   [[menu.main]]
     weight = 3
@@ -135,7 +145,7 @@ languageName = "English"
     [params.home.posts]
       enable = true
       # special amount of posts in each home posts page
-      paginate = 6
+      paginate = 3
       # {{< version 0.2.0 deleted >}} replaced with hiddenFromHomePage in params.page
       # default behavior when you don't set "hiddenFromHomePage" in front matter
       defaultHiddenFromHomePage = false
@@ -180,3 +190,9 @@ languageName = "English"
     searchKey = ""
 
 
+# whether to use robots.txt
+enableRobotsTXT = true
+# whether to use git commit log
+enableGitInfo = true
+# whether to use emoji code
+enableEmoji = true
