@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Crash Course, ML - Tag - Gray Matter Blog</title>
+        <link>http://graysnotes.com/tags/crash-course-ml/</link>
+        <description>Crash Course, ML - Tag - Gray Matter Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</managingEditor>
+            <webMaster>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</webMaster><lastBuildDate>Wed, 25 Jan 2023 23:37:44 &#43;0100</lastBuildDate><atom:link href="http://graysnotes.com/tags/crash-course-ml/" rel="self" type="application/rss+xml" /><item>
+    <title>Crash Course: Matplotlib and Jupyter Notebook</title>
+    <link>http://graysnotes.com/posts/crash-course-matplotlib/</link>
+    <pubDate>Wed, 25 Jan 2023 23:37:44 &#43;0100</pubDate>
+    <author>Gerald Maduabuchi</author>
+    <guid>http://graysnotes.com/posts/crash-course-matplotlib/</guid>
+    <description><![CDATA[Introduction to Matplotlib. Matplotlib is a library used to create visualisations of data in the Python programming language. With matplotlib, you can create two-dimensional graphs using Python Scripts. It’s pretty cool and I will be showing you how you could use it for your subsequent projects, research and schoolwork alongside the Jupyter Notebook tool.
+Jupyter Notebooks. A Jupyter Notebook is a locally hosted web application used for machine learning and data science tasks, which involves writing models, documenting models and visualising their implementation with tools such as Matplotlib or Seaborn (an alternative).]]></description>
+</item>
+</channel>
+</rss>
