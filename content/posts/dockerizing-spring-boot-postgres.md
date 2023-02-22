@@ -153,13 +153,12 @@ public class ExampleController {
 Define your application properties: -->
 
 
-```
-#---------------------Database Connection------------------
+```properties
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/example
 spring.datasource.username=postgres
 spring.datasource.password=postgres
 
-#--------------------JPA-ORM Properties-----------------
 spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
@@ -167,7 +166,7 @@ spring.jpa.properties.hibernate.format_sql=true
 ```
 
 
-Execute the command: `mvn spring-boot:run` or run the project from your IDE. Using a API Testing client such as Postman or Insonmia, test the following endpoint to see the response: `http://localhost:8080/api/v1/example`. That should return the above response in a string, as JSON format within the response body.
+Execute the command: `mvn spring-boot:run` or run the project from your IDE. Using an API Testing client such as Postman or Insonmia, test the following endpoint to see the response: `http://localhost:8080/api/v1/example`. That should return the above response in a string, as JSON format within the response body.
 
 ### Dockerizing our Application.
 
