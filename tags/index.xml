@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tags - Tag - Gray Matter Blog</title>
+        <title>Tags - Tag - Gray Matter</title>
         <link>http://graysnotes.com/tags/</link>
-        <description>Tags - Tag - Gray Matter Blog</description>
+        <description>Tags - Tag - Gray Matter</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</managingEditor>
             <webMaster>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</webMaster><lastBuildDate>Wed, 25 Jan 2023 23:37:44 &#43;0100</lastBuildDate><atom:link href="http://graysnotes.com/tags/" rel="self" type="application/rss+xml" /><item>
     <title>Crash Course, ML</title>

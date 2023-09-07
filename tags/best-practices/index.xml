@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Best Practices - Tag - Gray Matter Blog</title>
+        <title>Best Practices - Tag - Gray Matter</title>
         <link>http://graysnotes.com/tags/best-practices/</link>
-        <description>Best Practices - Tag - Gray Matter Blog</description>
+        <description>Best Practices - Tag - Gray Matter</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</managingEditor>
             <webMaster>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</webMaster><lastBuildDate>Thu, 05 Jan 2023 09:13:23 &#43;0100</lastBuildDate><atom:link href="http://graysnotes.com/tags/best-practices/" rel="self" type="application/rss+xml" /><item>
     <title>Avoiding The Oops in Oop</title>
