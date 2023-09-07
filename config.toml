@@ -4,7 +4,7 @@ baseURL = "http://graysnotes.com"
 theme = "LoveIt"
 
 # website title
-title = "Gray Matter Blog"
+title = "Gray Matter"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -134,7 +134,7 @@ languageName = "English"
       # {{< version 0.2.7 changed >}} title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page (HTML format is supported)
-      subtitle = "I design and engineer. I write papers. I explore engineering. I tell computers what to do."
+      subtitle = "Telling machines what to do and sharing my thoughts."
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
