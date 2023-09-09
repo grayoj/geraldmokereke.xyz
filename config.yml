@@ -64,7 +64,7 @@ params:
     imageUrl: "https://i.ibb.co/2yQ1FjM/DSC0163-1.jpg"
     imageWidth: 120
     imageHeight: 120
-    imageTitle: my image
+    imageTitle: my image.
     buttons:
       - name: Posts
         url: posts
