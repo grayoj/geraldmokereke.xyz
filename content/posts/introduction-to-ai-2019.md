@@ -138,15 +138,7 @@ reinforcement learning.
 
 ### Supervised Learning
 
-Supervised learning utilizes labeled training data sets to learn the implemented
-mapping function that converts input variables represented by $(X)$ to an output
-variable represented by $(Y)$. It solves for the value of f in the sample equation; $Y=f(X)$. Where $f$ represents the mapping function. Regression and classification are products,
-otherwise demonstrations of the concept of supervised learning which would be
-covered in a separate paper: Regression in Supervised Learning. These models are
-utilized to predict data from a set of input variables. Regression is applied to objects, and real values, while the latter is applied to categorical data. A regression model from samples could predict the following, for instance: The length of an object and speed of a computer. The latter could be used to predict certain labels, such as
-intelligent, genius or stupid.
-
-### Unsupervised Learning
+Supervised learning utilizes labeled training data sets to learn the implemented mapping function that converts input variables represented by \\((X)\\) to an output variable represented by \\((Y)\\). It solves for the value of \(f\) in the sample equation; \\(Y=f(x)\\). Where \\(f\\) represents the mapping function. Regression and classification are products, otherwise demonstrations of the concept of supervised learning which would be covered in a separate paper: Regression in Supervised Learning. These models are utilized to predict data from a set of input variables. Regression is applied to objects and real values, while the latter is applied to categorical data. A regression model from samples could predict the following, for instance: The length of an object and speed of a computer. The latter could be used to predict certain labels, such as intelligent, genius, or stupid.### Unsupervised Learning
 
 These models are implemented when there are available input variables within a
 provided dataset, but the absence of corresponding or related output variables.

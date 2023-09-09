@@ -2,6 +2,7 @@
 title: 'Building An Image Classifier'
 date: 2022-06-16T14:05:25+01:00
 draft: false
+math: true
 cover:
   image: "https://miro.medium.com/max/1400/1*NNifzsJ7tD2kAfBXt3AzEg.webp"
   # can also paste direct link from external site
@@ -11,6 +12,18 @@ cover:
   relative: false # To use relative path for cover image, used in hugo Page-bundles
   showToc: true
 ---
+
+{{< math.inline >}}
+{{ if or .Page.Params.math .Site.Params.math }}
+
+<!-- KaTeX -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+{{ end }}
+{{</ math.inline >}}
+
+
 
 # Introduction.
 
@@ -66,9 +79,9 @@ So let us do more fun stuff. Try and capture the below diagramatical represenati
 
 ![Structure](https://miro.medium.com/max/1400/1*NNifzsJ7tD2kAfBXt3AzEg.webp)
 
-The VGG16 is composed of $13$ convolutional layers, $5$ max-pooling layers, and $3$ fully connected layers. The number of layers with tunable parameters sums up to a total of $16$. Giving it the number preceding the name.
+The VGG16 is composed of \\(13\\) convolutional layers, \\(5\\) max-pooling layers, and \\(3\\) fully connected layers. The number of layers with tunable parameters sums up to a total of \\(16\\). Giving it the number preceding the name.
 
-The number of filters in the first block as shown is $64$. The number is doubled in the subsequent blocks until it gets to $512$. The model ends with two connected hidden layers a single output layer. The two fully connected layers have the same number of neurons which sums up to $4096$. The output layer contains a total of $1000$ neurons corresponding to the number of categories of the Image net dataset.
+The number of filters in the first block as shown is \\(64\\). The number is doubled in the subsequent blocks until it gets to \\(512\\). The model ends with two connected hidden layers, each containing \\(4096\\) neurons. The output layer contains a total of \\(1000\\) neurons corresponding to the number of categories in the ImageNet dataset.
 
 We would implement the following algorithm in the project. It is worthy to note that the source code was obtained from the Keras Team. The reference to the same paper I cited is coincidentally referenced in the code.
 

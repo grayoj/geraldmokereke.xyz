@@ -17,7 +17,7 @@ showToc: true
 
 Let's solve the shortest path problem
 
-Today we're going to be solving the shortes path problem by implementing [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) with some Python. So get a cup of coffee and a neovim buffer opened, it's going to be a ride.
+Today we're going to be solving the shortest path problem by implementing [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) with some Python. So get a cup of coffee and a neovim buffer opened, it's going to be a ride.
 
 ## What is the shortest path problem?
 

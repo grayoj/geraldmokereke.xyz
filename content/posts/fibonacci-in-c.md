@@ -6,6 +6,18 @@ math: true
 tags: ['Algorithms, C']
 ---
 
+{{< math.inline >}}
+{{ if or .Page.Params.math .Site.Params.math }}
+
+<!-- KaTeX -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+{{ end }}
+{{</ math.inline >}}
+
+
+
 # Introduction
 
 This article covers the concept of Fibonacci series. A very popular algorithm in Computer Science. We would be implementing the theory practically in the C programming language.
@@ -18,24 +30,28 @@ perspective. We could refer to these series as a growing array or set of numbers
 the previous sum of two terms is the determinant of the next term. In the Fibonacci
 Series, there is an increment in the numbers proceeding along the right in the series.
 Here is a graphical representation of the Fibonacci series, as an example:
-To furthermore illustrate the above, we will assign $f(0)$ and $f(1)$ to represent the first two
+To furthermore illustrate the above, we will assign \\(f(0)\\) and \\(f(1)\\) to represent the first two
 terms in the series below. To calculate five terms in a Fibonacci series, the series would
 be:
-Where $f(5)$ represents the number of terms in the series.
+Where \\(f(5)\\) represents the number of terms in the series.
 
-$f(5) = {0, 1, 1, 2, 3, 5}
-1, 2, 3, 4, 5$
+
+\\(f(5) = \\{0, 1, 1, 2, 3, 5\\}\\)
+
+1, 2, 3, 4, 5
 (Number of Values)
 
-This is a basic progression. $0+1=1$ to yield the next value which is third in our
-series. $1+2=3$, to yield the next value which is fifth in our series. For another
+This is a basic progression. \\(0+1=1\\) to yield the next value which is third in our
+
+series. \\(1+2=3\\), to yield the next value which is fifth in our series. For another
 example, to calculate twelve terms in a Fibonacci series, would be represented by:
 
-$f(12) = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144}
-1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12$
+\\(f(12) = \\{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144\\}\\)
 
-This is a basic progression. $8+13=21$ to yield the next value which is eight in our
-series. $21+34=55$, to yield the next value which is tenth in our series.
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12.
+
+This is a basic progression. \\(8+13=21\\) to yield the next value which is eight in our
+series. \\(21+34=55\\), to yield the next value which is tenth in our series.
 
 ### Implementing Fibonacci Series.
 
@@ -173,11 +189,11 @@ determine the best approach or algorithm to implement in solving a computational
 Below, in a table is the time-space complexity using the method of recursion and
 iteration.
 
-| Implementation     | Time Complexity          | Space Complexity |
-| ------------------ | ------------------------ | ---------------- |
-| Recursion          | $T(n) = T(n-1) + T(n-2)$ | $O(n)$           |
-| Iterative          | $O(n)$                   | $O(1)$           |
-| Space Optimization | $O(n)$                   | $O(1)$           |
+| The Implementation        | The Time Complexity       | Space Complexity   |
+| --------------------- | -----------------------   | ------------------ |
+| Recursion             | \\(T(n) = T(n-1) + T(n-2)\\)| \\( O(n) \\)    |
+| Iterative             | \\( O(n) \\)              | \\( O(1) \\)         |
+| Space Optimization    | \\( O(n) \\)              | \\( O(1) \\)         |
 
 ### Conclusion
 
@@ -186,4 +202,5 @@ programming Language. I hope you enjoyed this article. I would also do a detaile
 definition using this article on my upcoming YouTube channel where I teach
 programming and computer science. The Fibonacci series was one of the first ever topic
 in Data Structures and algorithms that I covered young, in computer science and
-dynamic programming. I hope you found this article inspiring and interesting.
+dynamic programming. I hope you found this article inspiring and interesting. 
+
