@@ -2,6 +2,7 @@
 title: 'Fibonacci Algorithms in C'
 date: 2022-08-17T16:59:56+01:00
 draft: false
+math: true
 tags: ['Algorithms, C']
 ---
 

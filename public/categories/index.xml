@@ -1,8 +1,14 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Categories - Category - Gray Matter</title>
-        <link>http://graysnotes.com/categories/</link>
-        <description>Categories - Category - Gray Matter</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</managingEditor>
-            <webMaster>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</webMaster><atom:link href="http://graysnotes.com/categories/" rel="self" type="application/rss+xml" /></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on Gray Matter Blog</title>
+    <link>https://graysnotes.com/categories/</link>
+    <description>Recent content in Categories on Gray Matter Blog</description>
+    <image>
+      <title>Gray Matter Blog</title>
+      <url>https://graysnotes.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://graysnotes.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://graysnotes.com/categories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
 </rss>

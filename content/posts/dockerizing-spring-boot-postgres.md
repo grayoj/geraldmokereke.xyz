@@ -181,7 +181,7 @@ We should have our newly created `.jar` stored in our target folder!
 
 It is usually stored in a folder known as `target/` which is in your project's directory. I recommend you copy the jar file from the target folder into your root directory. `sudo cp /target/<jar-file>.jar /<destination>/`
 
-### Creating the Dokcer image.
+### Creating the Docker image.
 
 A docker image is like potential energy. It's a container at rest packaged with all application dependencies required to run our application. To build an image, we would have to define the contents using something called a `Dockerfile.` Create a file called `Dockerfile`. No extension, just a file: `touch Dockerfile`. Depending on your IDE, you should see a blueish or pink whale icon carrying some boxes. Now, we define the contents:
 

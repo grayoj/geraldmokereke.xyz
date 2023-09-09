@@ -1,88 +1,150 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Tags - Tag - Gray Matter</title>
-        <link>http://graysnotes.com/tags/</link>
-        <description>Tags - Tag - Gray Matter</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</managingEditor>
-            <webMaster>Mgeraldoj07@gmail.com (Gerald Maduabuchi)</webMaster><lastBuildDate>Wed, 25 Jan 2023 23:37:44 &#43;0100</lastBuildDate><atom:link href="http://graysnotes.com/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Crash Course, ML</title>
-    <link>http://graysnotes.com/tags/crash-course-ml/</link>
-    <pubDate>Wed, 25 Jan 2023 23:37:44 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/tags/crash-course-ml/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Git, Commits, Version Control</title>
-    <link>http://graysnotes.com/tags/git-commits-version-control/</link>
-    <pubDate>Sun, 22 Jan 2023 16:05:12 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/tags/git-commits-version-control/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>API, Microservices, RPC, REST, SOAP</title>
-    <link>http://graysnotes.com/tags/api-microservices-rpc-rest-soap/</link>
-    <pubDate>Sun, 22 Jan 2023 11:27:55 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/tags/api-microservices-rpc-rest-soap/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>React</title>
-    <link>http://graysnotes.com/tags/react/</link>
-    <pubDate>Fri, 20 Jan 2023 16:56:38 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/tags/react/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Storybook, Tailwind</title>
-    <link>http://graysnotes.com/tags/storybook-tailwind/</link>
-    <pubDate>Fri, 20 Jan 2023 16:56:38 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/tags/storybook-tailwind/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Best Practices</title>
-    <link>http://graysnotes.com/tags/best-practices/</link>
-    <pubDate>Thu, 05 Jan 2023 09:13:23 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/tags/best-practices/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Java</title>
-    <link>http://graysnotes.com/tags/java/</link>
-    <pubDate>Thu, 05 Jan 2023 09:13:23 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/tags/java/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>OOP</title>
-    <link>http://graysnotes.com/tags/oop/</link>
-    <pubDate>Thu, 05 Jan 2023 09:13:23 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/tags/oop/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Laravel, React</title>
-    <link>http://graysnotes.com/tags/laravel-react/</link>
-    <pubDate>Wed, 04 Jan 2023 09:09:15 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/tags/laravel-react/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Algorithms, C</title>
-    <link>http://graysnotes.com/tags/algorithms-c/</link>
-    <pubDate>Wed, 17 Aug 2022 16:59:56 &#43;0100</pubDate>
-    <author>Gerald Maduabuchi</author>
-    <guid>http://graysnotes.com/tags/algorithms-c/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Gray Matter Blog</title>
+    <link>https://graysnotes.com/tags/</link>
+    <description>Recent content in Tags on Gray Matter Blog</description>
+    <image>
+      <title>Gray Matter Blog</title>
+      <url>https://graysnotes.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://graysnotes.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 08 Sep 2023 18:11:10 +0100</lastBuildDate><atom:link href="https://graysnotes.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Football</title>
+      <link>https://graysnotes.com/tags/football/</link>
+      <pubDate>Fri, 08 Sep 2023 18:11:10 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/football/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sports</title>
+      <link>https://graysnotes.com/tags/sports/</link>
+      <pubDate>Fri, 08 Sep 2023 18:11:10 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/sports/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tactics</title>
+      <link>https://graysnotes.com/tags/tactics/</link>
+      <pubDate>Fri, 08 Sep 2023 18:11:10 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/tactics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Crash Course, ML</title>
+      <link>https://graysnotes.com/tags/crash-course-ml/</link>
+      <pubDate>Wed, 25 Jan 2023 23:37:44 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/crash-course-ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git, Commits, Version Control</title>
+      <link>https://graysnotes.com/tags/git-commits-version-control/</link>
+      <pubDate>Sun, 22 Jan 2023 16:05:12 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/git-commits-version-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>API, Microservices, RPC, REST, SOAP</title>
+      <link>https://graysnotes.com/tags/api-microservices-rpc-rest-soap/</link>
+      <pubDate>Sun, 22 Jan 2023 11:27:55 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/api-microservices-rpc-rest-soap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://graysnotes.com/tags/react/</link>
+      <pubDate>Fri, 20 Jan 2023 16:56:38 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Storybook, Tailwind</title>
+      <link>https://graysnotes.com/tags/storybook-tailwind/</link>
+      <pubDate>Fri, 20 Jan 2023 16:56:38 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/storybook-tailwind/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Best Practices</title>
+      <link>https://graysnotes.com/tags/best-practices/</link>
+      <pubDate>Thu, 05 Jan 2023 09:13:23 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/best-practices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://graysnotes.com/tags/java/</link>
+      <pubDate>Thu, 05 Jan 2023 09:13:23 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>https://graysnotes.com/tags/oop/</link>
+      <pubDate>Thu, 05 Jan 2023 09:13:23 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laravel, React</title>
+      <link>https://graysnotes.com/tags/laravel-react/</link>
+      <pubDate>Wed, 04 Jan 2023 09:09:15 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/laravel-react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithms, C</title>
+      <link>https://graysnotes.com/tags/algorithms-c/</link>
+      <pubDate>Wed, 17 Aug 2022 16:59:56 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/algorithms-c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AI, 2019, Article</title>
+      <link>https://graysnotes.com/tags/ai-2019-article/</link>
+      <pubDate>Sun, 24 Nov 2019 21:40:50 +0100</pubDate>
+      
+      <guid>https://graysnotes.com/tags/ai-2019-article/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Introduction, FAQ</title>
+      <link>https://graysnotes.com/tags/introduction-faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://graysnotes.com/tags/introduction-faq/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
 </rss>

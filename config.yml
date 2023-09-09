@@ -1,0 +1,134 @@
+baseURL: "https://graysnotes.com/"
+title: Gray Matter Blog
+paginate: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+googleAnalytics: UA-123-45
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Gray Matter
+  description: "Telling computers what to do and sharing my thoughts on everything."
+  keywords: [Gerald Maduabuchi, Blog, Gray Matter]
+  author: Me
+  # author: ["Me", "You"] # multiple authors
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: true
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png"
+    favicon16x16: "https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png"
+    favicon32x32: "https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png"
+    apple_touch_icon: "https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png"
+    safari_pinned_tab: "https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png"
+
+  label:
+    text: "Gray Matter"
+    icon: https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png
+    iconHeight: 40
+
+  # profile-mode
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: grey matter blog
+    subtitle: " i tell computers what to do, write on engineering, computers and my thoughts"
+    imageUrl: "https://i.ibb.co/2yQ1FjM/DSC0163-1.jpg"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi, I'm Gerald \U0001F44B"
+    Content: Greetings, I'm Gerald Maduabuchi Okereke, a passionate computer programmer with a penchant for orchestrating the digital world, from commanding computers and browsers to collaborating with microprocessors. My journey extends beyond code – I find immense joy in crafting articles that delve into the realm of software development and articulating my viewpoints on politics and spirituality. Occasionally, I may veer off the technical path to share personal anecdotes and musings. If this eclectic mix piques your curiosity, stay with me on this intriguing voyage of discovery and reflection, all on my blog - Gray Matter. I will also migrate older articles from my previous blog here!  
+
+  socialIcons:
+    - name: twitter
+      url: "https://twitter.com/geraldabuchi"
+    - name: email
+      url: "https://stackoverflow.com"
+    - name: github
+      url: "https://github.com/grayoj"
+
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+
+  editPost:
+    URL: "https://github.com/grayoj"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: Tags
+      name: Tags
+      url: /tags/
+      weight: 40
+    - identifier: Heuvera
+      name: Heuvera
+      url: https://heuvera.com
+      weight: 40
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    style: monokai

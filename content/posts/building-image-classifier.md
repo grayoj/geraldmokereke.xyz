@@ -2,6 +2,14 @@
 title: 'Building An Image Classifier'
 date: 2022-06-16T14:05:25+01:00
 draft: false
+cover:
+  image: "https://miro.medium.com/max/1400/1*NNifzsJ7tD2kAfBXt3AzEg.webp"
+  # can also paste direct link from external site
+  # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
+  alt: "V"
+  caption: "Diagram of a covolutional neural network"
+  relative: false # To use relative path for cover image, used in hugo Page-bundles
+  showToc: true
 ---
 
 # Introduction.
