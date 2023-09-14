@@ -16,12 +16,12 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Gray Matter
-  description: "Telling computers what to do and sharing my thoughts on everything."
-  keywords: [Gerald Maduabuchi, Blog, Gray Matter]
+  title: Gray Bytes
+  description: "Hi, I am Gerakd Maduabuchi. I write a lot of articles on programming, what I'm learning, building, experiencing and other stuff.."
+  keywords: [Gerald Maduabuchi, Blog, Gray Bytes, Gerald Maduabuchi Okereke, Gerald Programmer, Gerald, Mgeraldoj, Grayoj, Heuvera]
   author: Me
   # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: ["https://i.ibb.co/YNRSK0Z/gerald-logo.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
@@ -45,15 +45,15 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png"
-    favicon16x16: "https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png"
-    favicon32x32: "https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png"
-    apple_touch_icon: "https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png"
-    safari_pinned_tab: "https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png"
+    favicon: "https://i.ibb.co/YNRSK0Z/gerald-logo.png"
+    favicon16x16: "https://i.ibb.co/YNRSK0Z/gerald-logo.png"
+    favicon32x32: "https://i.ibb.co/YNRSK0Z/gerald-logo.png"
+    apple_touch_icon: "https://i.ibb.co/YNRSK0Z/gerald-logo.png"
+    safari_pinned_tab: "https://i.ibb.co/YNRSK0Z/gerald-logo.png"
 
   label:
     text: "Gray Matter"
-    icon: https://i.ibb.co/tZS7PjT/03d6a40f8be9403b3d20949d84bbb1d1-removebg-preview.png
+    icon: "https://i.ibb.co/YNRSK0Z/gerald-logo.png"
     iconHeight: 40
 
   # profile-mode
