@@ -54,7 +54,7 @@ params:
   label:
     text: "Gray Bytes"
     icon: "https://i.ibb.co/YNRSK0Z/gerald-logo.png"
-    iconHeight: 40
+    iconHeight: 30
 
   # profile-mode
   profileMode:
