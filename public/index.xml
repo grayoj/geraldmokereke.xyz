@@ -10,7 +10,26 @@
       <link>https://i.ibb.co/YNRSK0Z/gerald-logo.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 09 Sep 2023 12:39:50 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Sep 2023 19:07:06 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimising React Native Apps</title>
+      <link>https://geraldmokereke.xyz/posts/optimising-react-native-apps/</link>
+      <pubDate>Sun, 17 Sep 2023 19:07:06 +0100</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/optimising-react-native-apps/</guid>
+      <description>The performance of mobile applications is extremely important. Users want a seamless experience with almost no bugs or glitches — to save yourself the violent reviews your mobile app would get on the app stores. Or preferably reduce? Because haters will hate.
+JavaScript is arguably a performant language naturally. It&amp;rsquo;s the pinnacle of all web applications that run on the client. A modern day functioning app cannot exist without shipping JavaScript modules to the client.</description>
+    </item>
+    
+    <item>
+      <title>* Engineering Nicfosts Eservices Module</title>
+      <link>https://geraldmokereke.xyz/posts/engineering-nicfosts-eservices-module/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/engineering-nicfosts-eservices-module/</guid>
+      <description>Nicfost is a federal government parastatal here in Nigeria, that is an abbreviation for &amp;ldquo;Nigerian Council of Food Science and Technology.&amp;rdquo; The Nigerian Council of Food Science and Technology is a professional body in Nigeria that is focused advancing the field of food science and technology in the country. It serves as an organization for professionals, researchers, educators, and practitioners who are involved in various aspects of food science and technology.</description>
+    </item>
+    
     <item>
       <title>Dijkstra&#39;s Algorithm: Solving the shortest path problem</title>
       <link>https://geraldmokereke.xyz/posts/shortest-path-problem/</link>

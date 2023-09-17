@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://geraldmokereke.xyz/posts/shortest-path-problem/</loc>
-    <lastmod>2023-09-09T12:39:50+01:00</lastmod>
-  </url><url>
     <loc>https://geraldmokereke.xyz/</loc>
-    <lastmod>2023-09-09T12:39:50+01:00</lastmod>
+    <lastmod>2023-09-17T19:07:06+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/posts/optimising-react-native-apps/</loc>
+    <lastmod>2023-09-17T19:07:06+01:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/posts/</loc>
-    <lastmod>2023-09-09T12:39:50+01:00</lastmod>
+    <lastmod>2023-09-17T19:07:06+01:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/tags/programming/</loc>
-    <lastmod>2023-09-09T12:39:50+01:00</lastmod>
+    <lastmod>2023-09-17T19:07:06+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/tags/react/</loc>
+    <lastmod>2023-09-17T19:07:06+01:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/tags/</loc>
+    <lastmod>2023-09-17T19:07:06+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/posts/engineering-nicfosts-eservices-module/</loc>
+    <lastmod>2023-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/posts/shortest-path-problem/</loc>
     <lastmod>2023-09-09T12:39:50+01:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/posts/a-failed-state-what-next/</loc>
@@ -73,9 +82,6 @@
   </url><url>
     <loc>https://geraldmokereke.xyz/posts/musketeers-of-api/</loc>
     <lastmod>2023-01-22T11:27:55+01:00</lastmod>
-  </url><url>
-    <loc>https://geraldmokereke.xyz/tags/react/</loc>
-    <lastmod>2023-01-20T16:56:38+01:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/posts/install-tailwind-storybook/</loc>
     <lastmod>2023-01-20T16:56:38+01:00</lastmod>

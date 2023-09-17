@@ -19,7 +19,7 @@ params:
   title: Gray Bytes
   description: "Hi, I am Gerakd Maduabuchi. I write a lot of articles on programming, what I'm learning, building, experiencing and other stuff.."
   keywords: [Gerald Maduabuchi, Blog, Gray Bytes, Gerald Maduabuchi Okereke, Gerald Programmer, Gerald, Mgeraldoj, Grayoj, Heuvera]
-  author: Me
+  author: Gerald Maduabuchi
   # author: ["Me", "You"] # multiple authors
   images: ["https://i.ibb.co/YNRSK0Z/gerald-logo.png"]
   DateFormat: "January 2, 2006"
