@@ -1,20 +1,18 @@
 ---
-title: "A Failed State: What Next?"
+title: 'Nigeria is A failed State: What Next?'
 date: 2023-09-08T18:32:38+01:00
 draft: false
-tags: ["Politics"]
+tags: ['Politics']
 cover:
-  image: "https://dailypost.ng/wp-content/uploads/2023/05/1683535628811.jpg"
+  image: 'https://dailypost.ng/wp-content/uploads/2023/05/1683535628811.jpg'
   # can also paste direct link from external site
   # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
-  alt: "V"
-  caption: "The 2023 Presidential Election Tribunal"
+  alt: 'V'
+  caption: 'The 2023 Presidential Election Tribunal'
   relative: false # To use relative path for cover image, used in hugo Page-bundles
-
 ---
 
-
-*Officially a failed state, what next?*
+_Officially a failed state, what next?_
 
 Nigeria's situation is a laughable one. Imagine being led by a president who has quite a [disturbing criminal record history](https://gazettengr.com/u-s-court-releases-certified-true-copies-of-bola-tinubus-drug-dealing-money-laundering-case-in-chicago/).
 
@@ -71,11 +69,9 @@ Also clocked a dollar to naira is now N900 (Naira)
 
 Yikes.
 
-Why is this even a currency? 
+Why is this even a currency?
 Anyways, for once — switch off that Sports channel, Big Brother Naija (a disgusting show anyways and distraction), and just reflect on the nation's situation and how you could somehow manage to survive.
 
 People who don't care about politics or the situation are possibly too rich off Nigeria to bother or are benefiting. But you, the common man? Understand your priorities, my friend.
-
-
 
 The supreme court, is the last bus stop, "legally." Hehe. Disclaimer, I said "legally."

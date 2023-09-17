@@ -1,6 +1,6 @@
 baseURL: "https://geraldmokereke.xyz/"
 title: Gray Bytes
-paginate: 5
+paginate: 10
 theme: PaperMod
 
 enableRobotsTXT: true

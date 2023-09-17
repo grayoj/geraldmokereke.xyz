@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Git, Commits, Version Control on Gray Matter Blog</title>
-    <link>https://graysnotes.com/tags/git-commits-version-control/</link>
-    <description>Recent content in Git, Commits, Version Control on Gray Matter Blog</description>
+    <title>Git, Commits, Version Control on Gray Bytes</title>
+    <link>https://geraldmokereke.xyz/tags/git-commits-version-control/</link>
+    <description>Recent content in Git, Commits, Version Control on Gray Bytes</description>
     <image>
-      <title>Gray Matter Blog</title>
-      <url>https://graysnotes.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://graysnotes.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>Gray Bytes</title>
+      <url>https://i.ibb.co/YNRSK0Z/gerald-logo.png</url>
+      <link>https://i.ibb.co/YNRSK0Z/gerald-logo.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 22 Jan 2023 16:05:12 +0100</lastBuildDate><atom:link href="https://graysnotes.com/tags/git-commits-version-control/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Jan 2023 16:05:12 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/tags/git-commits-version-control/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Writing better Git Commits</title>
-      <link>https://graysnotes.com/posts/commiting-in-git/</link>
+      <link>https://geraldmokereke.xyz/posts/commiting-in-git/</link>
       <pubDate>Sun, 22 Jan 2023 16:05:12 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/commiting-in-git/</guid>
+      <guid>https://geraldmokereke.xyz/posts/commiting-in-git/</guid>
       <description>Introduction. In this article you would learn how to properly structure and craft decent, intuitive and readable commit messages that summarise the context of the code you published to either a remote or local branch of a repository. This would be helpful if you work on collaborative projects, and would also save you the mental stress of trying to figure out a commit. I was once guilty of creating incredibly confusing and inappropriate commit messages, that did not capture the context of my code.</description>
     </item>
     

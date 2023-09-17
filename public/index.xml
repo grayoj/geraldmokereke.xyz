@@ -1,81 +1,137 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Gray Matter Blog</title>
-    <link>https://graysnotes.com/</link>
-    <description>Recent content on Gray Matter Blog</description>
+    <title>Gray Bytes</title>
+    <link>https://geraldmokereke.xyz/</link>
+    <description>Recent content on Gray Bytes</description>
     <image>
-      <title>Gray Matter Blog</title>
-      <url>https://graysnotes.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://graysnotes.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <title>Gray Bytes</title>
+      <url>https://i.ibb.co/YNRSK0Z/gerald-logo.png</url>
+      <link>https://i.ibb.co/YNRSK0Z/gerald-logo.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Sep 2023 18:11:10 +0100</lastBuildDate><atom:link href="https://graysnotes.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Sep 2023 12:39:50 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Positional Play for Tactical Lovers</title>
-      <link>https://graysnotes.com/posts/positional-play-for-tactical-lovers/</link>
-      <pubDate>Fri, 08 Sep 2023 18:11:10 +0100</pubDate>
+      <title>Dijkstra&#39;s Algorithm: Solving the shortest path problem</title>
+      <link>https://geraldmokereke.xyz/posts/shortest-path-problem/</link>
+      <pubDate>Sat, 09 Sep 2023 12:39:50 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/positional-play-for-tactical-lovers/</guid>
-      <description>Positional play. Johan Cruyff is regarded as one of the greatest players and coaches of all time. He is remembered for the very attractive, unique technical approach to football he employed at Barcelona, which he inherited from Rinus Michels&amp;rsquo; ideology at Ajax.
+      <guid>https://geraldmokereke.xyz/posts/shortest-path-problem/</guid>
+      <description>Let&amp;rsquo;s solve the shortest path problem
+Today we&amp;rsquo;re going to be solving the shortest path problem by implementing Dijkstra&amp;rsquo;s algorithm with some Python. So get a cup of coffee and a neovim buffer opened, it&amp;rsquo;s going to be a ride.
+What is the shortest path problem? Before we begin, we must first understand what is the shortest path problem. The shortest path problem is a fundamental optimization problem in computer science, speficifically graph theory under discrete mathematics or data structures and algorithms.</description>
+    </item>
+    
+    <item>
+      <title>Nigeria is A failed State: What Next?</title>
+      <link>https://geraldmokereke.xyz/posts/a-failed-state-what-next/</link>
+      <pubDate>Fri, 08 Sep 2023 18:32:38 +0100</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/a-failed-state-what-next/</guid>
+      <description>Officially a failed state, what next?
+Nigeria&amp;rsquo;s situation is a laughable one. Imagine being led by a president who has quite a disturbing criminal record history.
+Then, a vice president who allegedly has had dealings with Boko Haram.
+Or the current Chief of Staff to the president select, a former head of the House of Representatives who was a convicted criminal in the United States.
+Yikes.
+Then, much recently, they appointed a criminal who looted Rivers&amp;rsquo; state wealth and participated in the rigging of the elections on the President Select&amp;rsquo;s request, Nyesom Wike, as the Minister of Abuja.</description>
+    </item>
+    
+    <item>
+      <title>Do Not Call Me Techbro ...</title>
+      <link>https://geraldmokereke.xyz/posts/do-not-call-me-techbro/</link>
+      <pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/do-not-call-me-techbro/</guid>
+      <description>Don&amp;rsquo;t call me &amp;ldquo;Tech bro.&amp;rdquo;
+I was handing over a document I printed out, highlighting the several suggestions and feature requests I made concerning an existing application, and then I was called the TB word.
+Infuriating to say, &amp;ldquo;Tech Bro&amp;rdquo; is not something I&amp;rsquo;d like to be called or I&amp;rsquo;d like to address someone as. It&amp;rsquo;s already disgusting how a serious discipline is consolidated into the word &amp;ldquo;tech,&amp;rdquo; which influencers are tweeting around for a payout from X.</description>
+    </item>
+    
+    <item>
+      <title>Neovim Is Overrated</title>
+      <link>https://geraldmokereke.xyz/posts/neovim-is-overrated/</link>
+      <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/neovim-is-overrated/</guid>
+      <description>Neovim is actually overrated. I don&amp;rsquo;t really understand the buzz with some lua scripted, terminal based editor, which is a Vim rip-off. Which same human being hits &amp;ldquo;gg&amp;rdquo; to go to the top of a line, and &amp;ldquo;ggVG&amp;rdquo; with case sensitivity in mind to select all content?
+Hold up. I got you in the first paragraph, didn&amp;rsquo;t I? Neovim is a pretty cool Vim based editor that I still can not understand why people may hate on or have misgivings about it.</description>
+    </item>
+    
+    <item>
+      <title>Men Have Feelings</title>
+      <link>https://geraldmokereke.xyz/posts/men-have-feelings/</link>
+      <pubDate>Thu, 11 May 2023 11:24:29 +0100</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/men-have-feelings/</guid>
+      <description>There are so much vulnerable men in the world. Men do have feelings. But they deny. Heck, we deny. The rise of so much “red pill” podcasts and part-time sex-traffickers, girlfriend beating, chinless men like Andrew Tate or proven miscreant turned saviour, Sneako, with a cult following of young vulnerable men is worrisome. Why is this so, you may ask? Well, it’s really hard to say.
+Why bad representations exist. I genuinely believe the reason for the success of the aforementioned platforms and individuals is because men deep down are looking for a voice, otherwise firm figure to endorse and represent their patriarchal beliefs.</description>
+    </item>
+    
+    <item>
+      <title>Positional Play</title>
+      <link>https://geraldmokereke.xyz/posts/positional-play-for-tactical-lovers/</link>
+      <pubDate>Wed, 10 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/positional-play-for-tactical-lovers/</guid>
+      <description>Johan Cruyff is regarded as one of the greatest players and coaches of all time. He is remembered for the very attractive, unique technical approach to football he employed at Barcelona, which he inherited from Rinus Michels&amp;rsquo; ideology at Ajax.
 This is why Ajax, historically, would forever be an essential piece to modern-day football.
 Cruyff took the idea to Barcelona where he developed it. By carrying the Dutch philosophy or Ajax system to Barcelona, he also inspired other coaches at that time in Spain to adopt the philosophy.</description>
     </item>
     
     <item>
       <title>How to Dockerize Spring Boot and PostgreSQL</title>
-      <link>https://graysnotes.com/posts/dockerizing-spring-boot-postgres/</link>
+      <link>https://geraldmokereke.xyz/posts/dockerizing-spring-boot-postgres/</link>
       <pubDate>Tue, 21 Feb 2023 18:19:39 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/dockerizing-spring-boot-postgres/</guid>
+      <guid>https://geraldmokereke.xyz/posts/dockerizing-spring-boot-postgres/</guid>
       <description>Introduction. In this article, I will walk you through the entire process of dockerizing a Spring Boot application, and connecting it to a PostgreSQL database which would be spun up in a seperate container. I assume you have a little knowledge of Docker. I initially planned to do a Docker tutorial. I think at the time of writing this&amp;ndash;I have a draft on medium about it. Expect an article soon based on Docker.</description>
     </item>
     
     <item>
       <title>Crash Course: Matplotlib and Jupyter Notebook</title>
-      <link>https://graysnotes.com/posts/crash-course-matplotlib/</link>
+      <link>https://geraldmokereke.xyz/posts/crash-course-matplotlib/</link>
       <pubDate>Wed, 25 Jan 2023 23:37:44 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/crash-course-matplotlib/</guid>
+      <guid>https://geraldmokereke.xyz/posts/crash-course-matplotlib/</guid>
       <description>Introduction to Matplotlib. Matplotlib is a library used to create visualisations of data in the Python programming language. With matplotlib, you can create two-dimensional graphs using Python Scripts. It’s pretty cool and I will be showing you how you could use it for your subsequent projects, research and schoolwork alongside the Jupyter Notebook tool.
 Jupyter Notebooks. A Jupyter Notebook is a locally hosted web application used for machine learning and data science tasks, which involves writing models, documenting models and visualising their implementation with tools such as Matplotlib or Seaborn (an alternative).</description>
     </item>
     
     <item>
       <title>Writing better Git Commits</title>
-      <link>https://graysnotes.com/posts/commiting-in-git/</link>
+      <link>https://geraldmokereke.xyz/posts/commiting-in-git/</link>
       <pubDate>Sun, 22 Jan 2023 16:05:12 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/commiting-in-git/</guid>
+      <guid>https://geraldmokereke.xyz/posts/commiting-in-git/</guid>
       <description>Introduction. In this article you would learn how to properly structure and craft decent, intuitive and readable commit messages that summarise the context of the code you published to either a remote or local branch of a repository. This would be helpful if you work on collaborative projects, and would also save you the mental stress of trying to figure out a commit. I was once guilty of creating incredibly confusing and inappropriate commit messages, that did not capture the context of my code.</description>
     </item>
     
     <item>
       <title>Microservices, RPCs, SOAP, REST &amp; GraphQL</title>
-      <link>https://graysnotes.com/posts/musketeers-of-api/</link>
+      <link>https://geraldmokereke.xyz/posts/musketeers-of-api/</link>
       <pubDate>Sun, 22 Jan 2023 11:27:55 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/musketeers-of-api/</guid>
+      <guid>https://geraldmokereke.xyz/posts/musketeers-of-api/</guid>
       <description>Introduction This article will cover the topic of application programming interfaces, which is an essential unit that makes up the microservice architecture.
 The Microservice Architecture. The micro service architecture is a type of application architecture where the application is broken into several units, communicating effectively with each other over a network protocol. In contrast to monolith applications, which contains the entire logic, client side and server side units in one package that is deployed on a server.</description>
     </item>
     
     <item>
       <title>Set up Tailwind and Storybook with Next</title>
-      <link>https://graysnotes.com/posts/install-tailwind-storybook/</link>
+      <link>https://geraldmokereke.xyz/posts/install-tailwind-storybook/</link>
       <pubDate>Fri, 20 Jan 2023 16:56:38 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/install-tailwind-storybook/</guid>
+      <guid>https://geraldmokereke.xyz/posts/install-tailwind-storybook/</guid>
       <description>Introduction. In this article, you will learn how to install storybook and configure it with tailwindcss, in a Next JS project. I have used these tools to build several side projects of mine and even professional projects. I hope you find it interesting.
 Why Tailwind and Storybook? It boils down to your preference. Storybook is a pretty nice tool that could be used alongside several CSS in options. From utility first frameworks such as tailwindcss, to Chakra UI, CSS in JS (Styled Components) or plain styling in CSS.</description>
     </item>
     
     <item>
       <title>Avoiding The Oops in Oop</title>
-      <link>https://graysnotes.com/posts/oops-in-oop/</link>
+      <link>https://geraldmokereke.xyz/posts/oops-in-oop/</link>
       <pubDate>Thu, 05 Jan 2023 09:13:23 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/oops-in-oop/</guid>
+      <guid>https://geraldmokereke.xyz/posts/oops-in-oop/</guid>
       <description>Introduction There is an awful lot that goes into writing good code that abides by proper Object-Oriented Programming principles. In this tutorial I will basically cover the importance and significance of writing quality code (though I feel that quality code is subjective) thereby avoding &amp;ldquo;Oops in Oop.&amp;rdquo;
 Note: &amp;ldquo;Oops&amp;rdquo; is basically an exclamation made after a significant mistake or accident rather.
 Getting Started Before being able to follow this tutorial and get the best out of it, you have to meet up with the following perquisites.</description>
@@ -83,49 +139,53 @@ Getting Started Before being able to follow this tutorial and get the best out o
     
     <item>
       <title>Set Up React With Laravel</title>
-      <link>https://graysnotes.com/posts/set-up-react-with-laravel/</link>
+      <link>https://geraldmokereke.xyz/posts/set-up-react-with-laravel/</link>
       <pubDate>Wed, 04 Jan 2023 09:09:15 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/set-up-react-with-laravel/</guid>
+      <guid>https://geraldmokereke.xyz/posts/set-up-react-with-laravel/</guid>
       <description>How to set up Laravel with React JS. Introduction. Just like I was roaming Stackoverflow, you’ve probably been wondering how to set up React JS with the Laravel framework. React is arguably one of the most powerful libraries for building user-interfaces. Yes, it’s a library, not really a framework. It forms the view component of web applications. Laravel on the other hand, is a powerful open-source PHP framework used for building small to robust web applications.</description>
     </item>
     
     <item>
       <title>Fibonacci Algorithms in C</title>
-      <link>https://graysnotes.com/posts/fibonacci-in-c/</link>
+      <link>https://geraldmokereke.xyz/posts/fibonacci-in-c/</link>
       <pubDate>Wed, 17 Aug 2022 16:59:56 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/fibonacci-in-c/</guid>
+      <guid>https://geraldmokereke.xyz/posts/fibonacci-in-c/</guid>
       <description>Introduction This article covers the concept of Fibonacci series. A very popular algorithm in Computer Science. We would be implementing the theory practically in the C programming language.
 What is the Fibonacci Series? The Fibonacci series is a unique set of series whereby the following term is always equal to the sum of the previous two terms. We could reframe this explanation in another perspective. We could refer to these series as a growing array or set of numbers where the previous sum of two terms is the determinant of the next term.</description>
     </item>
     
     <item>
       <title>Building An Image Classifier</title>
-      <link>https://graysnotes.com/posts/building-image-classifier/</link>
+      <link>https://geraldmokereke.xyz/posts/building-image-classifier/</link>
       <pubDate>Thu, 16 Jun 2022 14:05:25 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/building-image-classifier/</guid>
+      <guid>https://geraldmokereke.xyz/posts/building-image-classifier/</guid>
       <description>Introduction. In this article, I will guide you through the processes I went through to create an image classifier using the Flask framework, the Keras library and Google&amp;rsquo;s popular machine learning library, Tensorflow. It was quite an interesting project that managed to gain over nineteen stars on Github, as at the time of writing this article. I was really pleased with the project, thus I humbly decided to share the entire workflow.</description>
     </item>
     
     <item>
       <title>Artificial Intelligence: The trend, myths, approaches, philosophy and science.</title>
-      <link>https://graysnotes.com/posts/introduction-to-ai-2019/</link>
+      <link>https://geraldmokereke.xyz/posts/introduction-to-ai-2019/</link>
       <pubDate>Sun, 24 Nov 2019 21:40:50 +0100</pubDate>
       
-      <guid>https://graysnotes.com/posts/introduction-to-ai-2019/</guid>
+      <guid>https://geraldmokereke.xyz/posts/introduction-to-ai-2019/</guid>
       <description>Disclaimer Note: This article is basically an archive. In no way, shall it be modified to preserve its authenticity. The content of this article depending on the reader, may come off as sparse, evasive of detailed theoretical proof, philosphical, or driven by science fiction. The sole purpose of this article is to capture the minds of neutral persons, entertain or educate. This article, is merely an introspective view into the accumulated beliefs and understanding of quite an explorative teenager (fourteen at the time), trying to grasp the field of artificial intelligence.</description>
     </item>
     
+    
+    
     <item>
       <title>Introduction</title>
-      <link>https://graysnotes.com/posts/hello_world.md/</link>
+      <link>https://geraldmokereke.xyz/posts/hello_world.md/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://graysnotes.com/posts/hello_world.md/</guid>
+      <guid>https://geraldmokereke.xyz/posts/hello_world.md/</guid>
       <description>Welcome to Gray&amp;rsquo;s Notes. I have a little note to drop proceeding the creation of this site. You are about to behold, sacred content - carved from the most reliable resources on the planet and my brain of course. Peril to thee, who assumes this blog is subjected to computers alone. It is a piece of entertainment to the fanatics of computers, but also a platform of expression, research, ideologies and beliefs spanning through several fields of science, technology, engineering, faith and poetry!</description>
     </item>
+    
+    
     
   </channel>
 </rss>
