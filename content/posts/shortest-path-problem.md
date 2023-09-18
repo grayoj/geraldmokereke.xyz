@@ -27,8 +27,9 @@ Don't get scared, I will try my best to simplify the concepts. The graph to many
 
 ### What is a graph?
 
-![Graph](https://cdn-media-1.freecodecamp.org/images/vQ77VuGVlTR95GgMxzyKqydIqoRJcPcWrigy 'Graph Visualization')
-_Graph Visualisation_
+| ![Graph](https://cdn-media-1.freecodecamp.org/images/vQ77VuGVlTR95GgMxzyKqydIqoRJcPcWrigy) |
+| :----------------------------------------------------------------------------------------: |
+|                          This is a simple illustration of a graph                          |
 
 A graph is a data structure that represents relationships between objects. It consists of two main components: nodes (also called vertices) and edges. Nodes or Vertices are like data points or entities in the graph. Nodes can represent things like cities, people, web pages, or any object you want to model. Edges or Links represent the connections or relationships between nodes. Edges show how nodes are related to each other. For example, in a social network, edges might represent friendships between people.
 

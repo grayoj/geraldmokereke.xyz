@@ -10,11 +10,11 @@ cover:
   # can also paste direct link from external site
   # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
   alt: 'V'
-  caption: 'The document, you may want to flip your phone sideways'
+  caption: 'The document. You may want to flip your phone sideways'
   relative: false # To use relative path for cover image, used in hugo Page-bundles
 ---
 
-Nicfost is a federal government parastatal here in Nigeria, that is an abbreviation for "[Nigerian Council of Food Science and Technology](https://nicfost.gov.ng/)." The Nigerian Council of Food Science and Technology is a professional body in Nigeria that is focused advancing the field of food science and technology in the country. It serves as an organization for professionals, researchers, educators, and practitioners who are involved in various aspects of food science and technology.
+The "[Nigerian Council of Food Science and Technology](https://nicfost.gov.ng/) is a professional body in Nigeria that is focused advancing the field of food science and technology in the country. It serves as an organization for professionals, researchers, educators, and practitioners who are involved in various aspects of food science and technology.
 
 They have a portal that is used by the adminstrative team at Nicfost. The client side is written entirely in JavaScript. I didn't build the client, it was written by someone else. After all, I have expressed my distate severall on this blog for JavaScript as [a bad dynamic programming language for robust projects](https://news.ycombinator.com/item?id=4113458). I use Typescript instead. The backend is also written in Java, I didn't write the initial Java backend though - which I wish I did. The refactoring and process wasn't funny.
 
@@ -28,11 +28,11 @@ Build the **Eservices Module**!
 
 - Create a wrapper around ecentral's URL endpoint to perform the following actions:
   - Initiate the call.
-  - This would be done by picking the serial number or license number from the client, checking if it was in our database — before then passing the request to Ecentral's URL via a [REST Template in spring boot.]()
+  - This would be done by picking the serial number or license number from the client, checking if it was in our database — before then passing the request to Ecentral's URL via a [REST Template in spring boot.](https://www.baeldung.com/rest-template)
 - Update and create the swagger to document the freshly created endpoint under the module name "Eservices."
 - Return the response from Ecentral to the client.
 - Implement an authentication mechanism involved by sending headers with the request, this was to be done Via JWT — but we approached this another way.
-- Employ a caching mechanism, or store the files in [Base64 format]() to prevent excess calls to Ecentral solutions.
+- Employ a caching mechanism, or store the files in [Base64 format](https://en.wikipedia.org/wiki/Base64) to prevent excess calls to Ecentral solutions.
 - Package and distribute the Java executable to be deployed by Nicfost's systems engineer. They use a Windows Server — I can't vomit enough
 
 ### The bottlenecks
@@ -63,7 +63,7 @@ CREATE TABLE Credentials (
 );
 ```
 
-We generated two random keys, long. About 32 characters long for each ` appId`` and  `appKey``, then I wrote a query to insert into the tables. The purpose was to simulate an authentication like system, so no one could make a call without authorised keys we could delete or update. I was to create three endpoints. Endpoints for getting the License Certificate, Certificate of Registration and the Premises Certificate.
+We generated two random keys, long. About 32 characters long for each ` appId` and `appKey`, then I wrote a query to insert into the tables. The purpose was to simulate an authentication like system, so no one could make a call without authorised keys we could delete or update. I was to create three endpoints. Endpoints for getting the License Certificate, Certificate of Registration and the Premises Certificate.
 
 Here, I will illustrate my thought process and flow while I wrote the code to execute the request. I have tried my best to make the below code self explanatory:
 
@@ -161,7 +161,7 @@ So to walk around this was relatively simple. Extract the headers being received
 
 ```
 
-That way, I was able to kill the error, and the response was successful. Ecentral were also using PHP so that was why I implemented the caching mechanism as stated earlier, to reduce the calls. Also I benchmarked their sever to return a certificate within **6-7** seconds on an average.
+That way, I was able to kill the error, and the response was successful. Ecentral were also using PHP so that was why I implemented the caching mechanism as stated earlier, to reduce the calls. Also I benchmarked their server to return a certificate within **6-7** seconds on an average.
 
 ## What about the authentication?
 
