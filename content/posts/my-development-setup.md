@@ -183,7 +183,7 @@ background colour which would fry my eyes today and some other configurations.
 At the basic level this was the most important components of my configuration:
 
 - The status-line. I needed to see the name of my file, the branch I was on. The
-  LSP that was active. Hoe many lines and columns I was on, and so on.
+  LSP that was active. How many lines and columns I was on, and so on.
 - Telescope. I wanted to search through my files easily, without the `grep`.
 - The Nerdtree, because nobody is writing code without a file explorer or way to
   navigate.
@@ -203,9 +203,9 @@ tl:dr?
 
 Okay, so what's my setup exactly? You'd be surprised to find out how extremely
 minimalistic it is, compared to the bloatware I had before. I'll start off with
-the editors I use at the basic level.
+the editors I use at the basic level. I starred them below:
 
-- Neovim.
+- Neovim. \*
 - Intelli J IDEA \*
 - Visual Studio Code \*
 - Tmux a multiplexer. Lets me use one tab, create multiple windows.
