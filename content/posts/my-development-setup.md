@@ -111,10 +111,9 @@ eventually hook me on Vim, again.
 
 {{< youtube hYxwe-bYkrU >}}
 
-[George Hotz](https://en.wikipedia.org/wiki/George_Hotz) is a cool systems
-level programmer I followed for many reasons. I mean, it seemed like he loved C
-and the only thing with me that didn't sync with him, was his avid use of
-Python.
+[George Hotz](https://en.wikipedia.org/wiki/George_Hotz) is a cool systems level
+programmer I followed for many reasons. I mean, it seemed like he loved C and
+the only thing with me that didn't sync with him, was his avid use of Python.
 
 I was blown away - he was extremely fast. I am trying to mimmick his movements
 and I'm nothing close to him. He's in a terminal window, practically schooling
@@ -148,7 +147,7 @@ Attempting to relive the past moments. In less than a year, I had ported fully
 to Ubuntu, a
 [debian distribution of Linux](https://ubuntu.com/download/desktop). I did not
 regret. I truly recommend except you're someone who is heavily invested on the
-[C# and .NET staCK](https://dotnet.microsoft.com/en-us/languages/csharp),
+[C# and .NET stack](https://dotnet.microsoft.com/en-us/languages/csharp),
 [Windows Server](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwi4zPSniLyBAxUMx-0KHaoSCA8YABARGgJkZw&ase=2&gclid=Cj0KCQjw06-oBhC6ARIsAGuzdw3NJVuBHK57kgmLNRnSBDDRKCpy1OInak3WsRCRSb5Wd9UIFYKLO0MaAgZ5EALw_wcB&ohost=www.google.com&cid=CAESa-D2XMkE3sPtkgeZd3TvUlsHOeIb59zsZgXVkoWmhu29fPPkVnzqxXjqqpLinNpb2hx-trZEffAEnppAxvTNAZw416vsQsmA7moHV6shxYKrrB0ptGHrLC3rZl1uxRjEdBKzj8U0zSTK_lz_&sig=AOD64_2Z6W0n9uLf1C9GyWtZu_BpVUuBcA&q&nis=4&adurl&ved=2ahUKEwjD9-yniLyBAxUViVwKHd81CP0Q0Qx6BAgKEAE)
 and Microsoft platform? You should definitely port to Linux. I promise you, that
 you would enjoy it and become really productive. You escape the .exe and MSI
@@ -198,7 +197,7 @@ At the basic level this was the most important components of my configuration:
 Those were the basic building blocks of my neovim configurations. The rest, were
 well - excess. But nevermind - how about you check out my configurations?
 
-## My Development environment
+## tl:dr; My Development environment
 
 tl:dr?
 
