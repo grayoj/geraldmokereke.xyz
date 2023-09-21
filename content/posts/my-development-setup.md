@@ -44,13 +44,13 @@ that point.
 Reflecting on that and where I am today really makes me laugh. It was truly a
 fun ride. That was early in the 2009s and 2010s. There was no "cool"
 [LSPs (Language Server Protocol)](https://en.wikipedia.org/wiki/Language_Server_Protocol)
-to do some autocomplete, no treesitter or any of the available cool integrations
+to do some autocomplete, there was no treesitter or any of the available cool integrations
 today.
 
 The advantages of Vim which I realised on the early onset were:
 
 - **Extremely light and portable**: Vim was well suited to computers running on
-  low memory or CPU. This was what made it gold to me. At that time, I was
+  low memory or CPU. This was what made it perfect for me. At that time, I was
   running netbeans on my system and it was causing a major lag.
 - **Felt like a game**: Being a kid, I really enjoyed the odd keybindings it
   took to execute certain commands on my Vim. It gave me this game feeling and I
@@ -58,11 +58,11 @@ The advantages of Vim which I realised on the early onset were:
 - **The hollywood hacker persona**: Anytime my relatives came around for
   Christmas, Easter or any holidays - I would bam! Inside vim, inside a pile of
   long ass bash commands and disorganised C code to run a simple CLI calculator.
-- **Keeping strangers off**: Anyone who got into Vim on my computer then, was
+- **Keeping strangers off**: Anyone who got into Vim on my computer then was
   basically confused. So this in a way was pretty helpful in keeping strangers
   off.
 
-The problems I faced as of then was related to poor autocomplete, no cool
+The problems I faced as of then were related to poor autocomplete, no cool
 features and GUI like [codeblocks](https://www.codeblocks.org/) and
 [netbeans](https://netbeans.apache.org/) gave me later on in my development
 life. Hence, I eventually dropped Vim, landed upon Windows. The transition was
@@ -103,7 +103,7 @@ What changed it?
 
 ## Vim again
 
-had I had a whole lot of channels I watched on YouTube then to keep me
+I had a whole lot of channels I watched on YouTube then to keep me
 motivated. I used these channels as _background noise_. One of my favourite
 channels as of the time was the
 [George Hotz Archive](https://www.youtube.com/@geohotarchive) that would
