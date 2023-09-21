@@ -3,21 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://geraldmokereke.xyz/</loc>
-    <lastmod>2023-09-17T19:07:06+01:00</lastmod>
+    <lastmod>2023-09-21T10:46:46+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/posts/my-development-setup/</loc>
+    <lastmod>2023-09-21T10:46:46+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/tags/neovim/</loc>
+    <lastmod>2023-09-21T10:46:46+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/posts/</loc>
+    <lastmod>2023-09-21T10:46:46+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/tags/programming/</loc>
+    <lastmod>2023-09-21T10:46:46+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/tags/setup/</loc>
+    <lastmod>2023-09-21T10:46:46+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/tags/</loc>
+    <lastmod>2023-09-21T10:46:46+01:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/posts/optimising-react-native-apps/</loc>
     <lastmod>2023-09-17T19:07:06+01:00</lastmod>
   </url><url>
-    <loc>https://geraldmokereke.xyz/posts/</loc>
-    <lastmod>2023-09-17T19:07:06+01:00</lastmod>
-  </url><url>
-    <loc>https://geraldmokereke.xyz/tags/programming/</loc>
-    <lastmod>2023-09-17T19:07:06+01:00</lastmod>
-  </url><url>
     <loc>https://geraldmokereke.xyz/tags/react/</loc>
-    <lastmod>2023-09-17T19:07:06+01:00</lastmod>
-  </url><url>
-    <loc>https://geraldmokereke.xyz/tags/</loc>
     <lastmod>2023-09-17T19:07:06+01:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/posts/engineering-nicfosts-eservices-module/</loc>
@@ -34,9 +43,6 @@
   </url><url>
     <loc>https://geraldmokereke.xyz/posts/do-not-call-me-techbro/</loc>
     <lastmod>2023-07-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://geraldmokereke.xyz/tags/neovim/</loc>
-    <lastmod>2023-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/posts/neovim-is-overrated/</loc>
     <lastmod>2023-06-18T00:00:00+00:00</lastmod>

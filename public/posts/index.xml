@@ -10,7 +10,17 @@
       <link>https://i.ibb.co/YNRSK0Z/gerald-logo.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 17 Sep 2023 19:07:06 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Sep 2023 10:46:46 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Development Setup</title>
+      <link>https://geraldmokereke.xyz/posts/my-development-setup/</link>
+      <pubDate>Thu, 21 Sep 2023 10:46:46 +0100</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/my-development-setup/</guid>
+      <description>This article was created because of my guy, Collins Ikotun, my vim convert! Also, I use vim btw.
+When I started off programming I really had a very wrong perception of a &amp;ldquo;development environment&amp;rdquo; or &amp;ldquo;development setup.&amp;rdquo; This led to me, eventually wanting to do the most. Effectively creating an amazing workflow to most people with very much reduced productivity. Now, I&amp;rsquo;ve come to realise that a development setup isn&amp;rsquo;t necessarily spawning an ultra wide $5,000 monitor.</description>
+    </item>
+    
     <item>
       <title>Optimising React Native Apps</title>
       <link>https://geraldmokereke.xyz/posts/optimising-react-native-apps/</link>

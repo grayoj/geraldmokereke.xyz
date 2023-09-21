@@ -10,13 +10,31 @@
       <link>https://i.ibb.co/YNRSK0Z/gerald-logo.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 17 Sep 2023 19:07:06 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Sep 2023 10:46:46 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Neovim</title>
+      <link>https://geraldmokereke.xyz/tags/neovim/</link>
+      <pubDate>Thu, 21 Sep 2023 10:46:46 +0100</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/tags/neovim/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Programming</title>
       <link>https://geraldmokereke.xyz/tags/programming/</link>
-      <pubDate>Sun, 17 Sep 2023 19:07:06 +0100</pubDate>
+      <pubDate>Thu, 21 Sep 2023 10:46:46 +0100</pubDate>
       
       <guid>https://geraldmokereke.xyz/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>https://geraldmokereke.xyz/tags/setup/</link>
+      <pubDate>Thu, 21 Sep 2023 10:46:46 +0100</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/tags/setup/</guid>
       <description></description>
     </item>
     
@@ -35,15 +53,6 @@
       <pubDate>Fri, 08 Sep 2023 18:32:38 +0100</pubDate>
       
       <guid>https://geraldmokereke.xyz/tags/politics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Neovim</title>
-      <link>https://geraldmokereke.xyz/tags/neovim/</link>
-      <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldmokereke.xyz/tags/neovim/</guid>
       <description></description>
     </item>
     
