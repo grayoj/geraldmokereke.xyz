@@ -1,7 +1,7 @@
 ---
 title: "Artificial Intelligence: The trend, myths, approaches, philosophy and science."
 date: 2019-11-24T21:40:50+01:00
-draft: false
+draft: true
 tags: ['AI, 2019, Article']
 ---
 
