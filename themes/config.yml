@@ -2,7 +2,7 @@ baseURL: "https://geraldmokereke.xyz"
 languageCode: "en-us"
 title: "Gerald."
 theme: "rocinante"
-paginate: 8
+paginate: 6
 
 markup:
   highlight:
@@ -19,7 +19,6 @@ params:
   favicon: "https://i.ibb.co/YNRSK0Z/gerald-logo.png"
   about: |
     I'm Gerald Maduabuchi Okereke. A software engineer exploring Types, Tensors and Distributed systems. I work on backend infrastructure and cloud at the Suburban Fiber Company.
-    Here, I write articles about things I'm building, learning and other stuff.
 
   links:
     - link:

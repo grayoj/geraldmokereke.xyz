@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on Gray Bytes</title>
+    <title>Tags on Gerald.</title>
     <link>https://geraldmokereke.xyz/tags/</link>
-    <description>Recent content in Tags on Gray Bytes</description>
+    <description>Recent content in Tags on Gerald.</description>
     <image>
-      <title>Gray Bytes</title>
+      <title>Gerald.</title>
       <url>https://i.ibb.co/YNRSK0Z/gerald-logo.png</url>
       <link>https://i.ibb.co/YNRSK0Z/gerald-logo.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Thu, 21 Sep 2023 10:46:46 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neovim</title>
@@ -179,15 +180,6 @@
       <pubDate>Wed, 17 Aug 2022 16:59:56 +0100</pubDate>
       
       <guid>https://geraldmokereke.xyz/tags/algorithms-c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AI, 2019, Article</title>
-      <link>https://geraldmokereke.xyz/tags/ai-2019-article/</link>
-      <pubDate>Sun, 24 Nov 2019 21:40:50 +0100</pubDate>
-      
-      <guid>https://geraldmokereke.xyz/tags/ai-2019-article/</guid>
       <description></description>
     </item>
     

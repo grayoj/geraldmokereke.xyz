@@ -1,16 +1,19 @@
 ---
-title: 'Nigeria is A failed State: What Next?'
+title: "Nigeria is A failed State: What Next?"
 date: 2023-09-08T18:32:38+01:00
 draft: false
-tags: ['Politics']
+tags: ["Politics"]
+banner: https://dailypost.ng/wp-content/uploads/2023/05/1683535628811.jpg
 cover:
-  image: 'https://dailypost.ng/wp-content/uploads/2023/05/1683535628811.jpg'
+  image: "https://dailypost.ng/wp-content/uploads/2023/05/1683535628811.jpg"
   # can also paste direct link from external site
   # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
-  alt: 'V'
-  caption: 'The 2023 Presidential Election Tribunal'
+  alt: "V"
+  caption: "The 2023 Presidential Election Tribunal"
   relative: false # To use relative path for cover image, used in hugo Page-bundles
 ---
+
+![2023 Tribunal](https://dailypost.ng/wp-content/uploads/2023/05/1683535628811.jpg)
 
 _Officially a failed state, what next?_
 

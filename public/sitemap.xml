@@ -2,16 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://geraldmokereke.xyz/posts/boolean-logic-and-gates-part-1/</loc>
+    <lastmod>2023-10-08T19:46:32+01:00</lastmod>
+  </url><url>
     <loc>https://geraldmokereke.xyz/</loc>
-    <lastmod>2023-09-21T10:46:46+01:00</lastmod>
+    <lastmod>2023-10-08T19:46:32+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/posts/</loc>
+    <lastmod>2023-10-08T19:46:32+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/posts/unspoken-flaws-of-dynamic-languages/</loc>
+    <lastmod>2023-10-03T21:00:01+01:00</lastmod>
+  </url><url>
+    <loc>https://geraldmokereke.xyz/posts/discovering-the-abacus-with-cpp/</loc>
+    <lastmod>2023-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/posts/my-development-setup/</loc>
     <lastmod>2023-09-21T10:46:46+01:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/tags/neovim/</loc>
-    <lastmod>2023-09-21T10:46:46+01:00</lastmod>
-  </url><url>
-    <loc>https://geraldmokereke.xyz/posts/</loc>
     <lastmod>2023-09-21T10:46:46+01:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/tags/programming/</loc>
@@ -121,12 +130,6 @@
   </url><url>
     <loc>https://geraldmokereke.xyz/posts/building-image-classifier/</loc>
     <lastmod>2022-06-16T14:05:25+01:00</lastmod>
-  </url><url>
-    <loc>https://geraldmokereke.xyz/tags/ai-2019-article/</loc>
-    <lastmod>2019-11-24T21:40:50+01:00</lastmod>
-  </url><url>
-    <loc>https://geraldmokereke.xyz/posts/introduction-to-ai-2019/</loc>
-    <lastmod>2019-11-24T21:40:50+01:00</lastmod>
   </url><url>
     <loc>https://geraldmokereke.xyz/archives.fr/</loc>
   </url><url>

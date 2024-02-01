@@ -11,6 +11,8 @@ cover:
 relative: false # To use relative path for cover image, used in hugo Page-bundles
 ---
 
+![Rant Session](https://i.redd.it/wtbzgdt2i6j71.jpg)
+
 > Disclaimer: Possible rant session.
 
 ## Introduction

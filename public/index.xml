@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Gray Bytes</title>
+    <title>Gerald.</title>
     <link>https://geraldmokereke.xyz/</link>
-    <description>Recent content on Gray Bytes</description>
+    <description>Recent content on Gerald.</description>
     <image>
-      <title>Gray Bytes</title>
+      <title>Gerald.</title>
       <url>https://i.ibb.co/YNRSK0Z/gerald-logo.png</url>
       <link>https://i.ibb.co/YNRSK0Z/gerald-logo.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 21 Sep 2023 10:46:46 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Oct 2023 19:46:32 +0100</lastBuildDate><atom:link href="https://geraldmokereke.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Boolean Logic and Gates Part One</title>
+      <link>https://geraldmokereke.xyz/posts/boolean-logic-and-gates-part-1/</link>
+      <pubDate>Sun, 08 Oct 2023 19:46:32 +0100</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/boolean-logic-and-gates-part-1/</guid>
+      <description>This is part one of the Boolean Logic and Gates series.
+Worthy to think George Boole may actually be the grandfather of the digital world.
+Brief Overview Boolean Logic is quintessential to the field of computer science and programming in general. It is an integral component and foundational cornerstone to the way digital circuits are constructed and data is manipulated.
+I&amp;rsquo;ve been revisting a lot of content concerning Boolean Logic.</description>
+    </item>
+    
+    <item>
+      <title>Unspoken Flaws of Dynamic Languages</title>
+      <link>https://geraldmokereke.xyz/posts/unspoken-flaws-of-dynamic-languages/</link>
+      <pubDate>Tue, 03 Oct 2023 21:00:01 +0100</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/unspoken-flaws-of-dynamic-languages/</guid>
+      <description>Disclaimer: Possible rant session.
+Introduction I decided to write this essay after the recent rebuttals from the Vanilla JavaScript community towards Typescript — Typecasting, Typesafety — call it whatever you wish.
+A lot of people who got into programming probably began with dynamic programming languages — such as Ruby, PHP, Perl, and Python, for example. Hence, being their &amp;ldquo;first love,&amp;rdquo; it&amp;rsquo;s really hard trying to convince them that those languages may not be the best choice for large codebases where a lot of collaboration is needed.</description>
+    </item>
+    
+    <item>
+      <title>Discovering the Binary Abacus With C&#43;&#43;</title>
+      <link>https://geraldmokereke.xyz/posts/discovering-the-abacus-with-cpp/</link>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldmokereke.xyz/posts/discovering-the-abacus-with-cpp/</guid>
+      <description>The Binary Abacus An abacus was one of the earliest computing devices created that was used to perform the four basic operations in mathematics — addition, subtraction, multiplication, and division.
+In this article, we are going to be designing a binary abacus from scratch using C++
+This program will be CLI/Terminal based. We would not need any GUI software necessary to begin. I got interested by stumbling across the video below:</description>
+    </item>
+    
     <item>
       <title>My Development Setup</title>
       <link>https://geraldmokereke.xyz/posts/my-development-setup/</link>
@@ -193,15 +228,6 @@ Italian Mathematician, Fibonacci. What is the Fibonacci Series? The Fibonacci se
       
       <guid>https://geraldmokereke.xyz/posts/building-image-classifier/</guid>
       <description>Introduction. In this article, I will guide you through the processes I went through to create an image classifier using the Flask framework, the Keras library and Google&amp;rsquo;s popular machine learning library, Tensorflow. It was quite an interesting project that managed to gain over nineteen stars on Github, as at the time of writing this article. I was really pleased with the project, thus I humbly decided to share the entire workflow.</description>
-    </item>
-    
-    <item>
-      <title>Artificial Intelligence: The trend, myths, approaches, philosophy and science.</title>
-      <link>https://geraldmokereke.xyz/posts/introduction-to-ai-2019/</link>
-      <pubDate>Sun, 24 Nov 2019 21:40:50 +0100</pubDate>
-      
-      <guid>https://geraldmokereke.xyz/posts/introduction-to-ai-2019/</guid>
-      <description>Disclaimer Note: This article is basically an archive. In no way, shall it be modified to preserve its authenticity. The content of this article depending on the reader, may come off as sparse, evasive of detailed theoretical proof, philosphical, or driven by science fiction. The sole purpose of this article is to capture the minds of neutral persons, entertain or educate. This article, is merely an introspective view into the accumulated beliefs and understanding of quite an explorative teenager (fourteen at the time), trying to grasp the field of artificial intelligence.</description>
     </item>
     
     
