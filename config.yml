@@ -18,11 +18,14 @@ params:
   email: "mail@example.com"
   favicon: "https://i.ibb.co/YNRSK0Z/gerald-logo.png"
   about: |
-    I'm Gerald Maduabuchi Okereke. A software engineer exploring Types, Tensors and Distributed systems. I work on backend infrastructure and cloud at the Suburban Fiber Company.
+    I'm Gerald Maduabuchi Okereke. Welcome to my blog. A software engineer exploring Types, Tensors and Distributed systems.
     Here, I write articles about things I'm building, learning and other stuff.
 
   links:
     - link:
+        - name: "My Website"
+          href: "https://geraldokereke.xyz"
+          new_tab: true
         - name: "Github"
           href: "https://github.com/grayoj"
           new_tab: true
