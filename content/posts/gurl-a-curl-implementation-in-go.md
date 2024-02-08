@@ -2,7 +2,7 @@
 title: "Gurl: A Curl Implementation in Go"
 date: 2024-01-20T16:19:07+01:00
 tags: []
-draft: false
+draft: true
 ---
 
 [cURL (client for url)](https://curl.se) is a command-line tool for transferring data using several network protocols. It's commonly used in the development community for sending HTTP requests (API based requests to a server)
